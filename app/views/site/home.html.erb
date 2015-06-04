@@ -1,0 +1,32 @@
+<h1> CoFounders </h1>
+
+ 
+<section>
+
+	<% @projects.each do |project| %>
+
+		<img src =<%= project.project_image %>>
+		<ul>
+   			<li><%= project.project_name %></li>
+   			<li><%= project.project_position %></li>
+   		</ul>
+
+	<% end %>
+
+</section>
+
+<section>
+
+		<% @users.each do |user| %>
+
+		<img src =<%= user.user_image %>>
+		<ul>
+			<li><%= user.user_name %> <%= user.user_last_name %></li>
+   			<li><%= user.user_education %></li>
+   			<li><%= user.user_position %></li>
+   			<li><%= user.user_skills %></li>
+   		</ul>
+
+	<% end %>
+
+</section>
