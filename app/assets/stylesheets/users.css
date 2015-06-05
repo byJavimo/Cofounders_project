@@ -7,7 +7,7 @@
   margin: 0 auto 10px;
   padding: 20px 0 10px 0;
   font-size: 16px;
-  width: 300px;
+  width: 500px;
 }
 
 input[type=text],
@@ -20,7 +20,7 @@ input[type=password] {
   height: 60px;
   margin: 6px auto;
   text-indent: 10px;
-}
+} 
 
 .btn-submit {
   color: #FFFFFF;
@@ -30,5 +30,12 @@ input[type=password] {
   padding: 10px 20px;
   border: 0;
   margin-top: 6px;
+}
+
+.user_image_index{
+  width: 400px;
+  height: 400px;
+  margin-top: 25px;
+  border: 5px white;
 }
   

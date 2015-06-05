@@ -2,3 +2,17 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.user_home_image{
+	width: 300px;
+	height: 300px;
+	margin-top: 25px;
+	margin-left: 50px;
+}
+
+.project_home_image{
+	width: 300px;
+	height: 300px;
+	margin-top: 25px;
+	margin-left: 50px;
+}

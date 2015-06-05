@@ -1,17 +1,21 @@
-<%=form_for @project do |f| %>
-	Upload a photo
-	<%= f.text_field :promotor_image %>
-	What is your project?Add the name of your project
-	<%= f.text_field :project_name %>
-	What position do you need to cover?
-	Position: <%= f.text_field :project_position %>
-	Skills/Technologies needed?(PHP, HTML, Excel, Proactive...)
-	<%= f.text_field :project_skills %>
-	What do you need for your project/startup?
-	<%= check_box_tag(:project_cofounder) %>
-	<%= label_tag(:project_cofounder, "A CoFounder") %>
-	<%= check_box_tag(:project_employee) %>
-	<%= label_tag(:project_employee, "An employee") %>
-	<br>
-	<%= f.submit 'Publsh your project' %>
-<% end %>
+<div class="form">
+
+	<%=form_for @project do |f| %>
+		Upload a photo
+		<%= f.text_field :project_image, :placeholder => "Enter the link to your photo" %>
+		What is your project?Add the name of your project
+		<%= f.text_field :project_name, :placeholder => "Name of your project" %>
+		What position do you need to cover?
+		Position: <%= f.text_field :project_position, :placeholder => "Programmer, Designer, Martketing Assitant..." %>
+		Skills/Technologies needed?
+		<%= f.text_field :project_skills, :placeholder => "PHP, Ruby, JavaScript, SEO..."%>
+		What do you need for your project/startup?
+		<%= check_box_tag(:project_cofounder) %>
+		<%= label_tag(:project_cofounder, "A CoFounder") %>
+		<%= check_box_tag(:project_employee) %>
+		<%= label_tag(:project_employee, "An employee") %>
+		<br>
+		<%= f.submit 'Publish your project', class: "btn-submit" %>
+	<% end %>
+
+<div>

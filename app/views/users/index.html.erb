@@ -1,5 +1,19 @@
-<% @users.each do |user| %>
-	<ul>
-		<li><%= user.user_name %></li>
-	<ul>
-<% end %>
+<section>
+
+	<% @users.each do |user| %>
+
+	<div>
+
+		<img class="user_image_index" src=<%=user.user_image %>>
+	</div>
+
+	<div>
+
+		<ul>
+			<li><%= user.user_name %></li>
+		<ul>
+	</div>
+
+	<% end %>
+	
+</section>

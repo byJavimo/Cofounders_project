@@ -1,15 +1,20 @@
+<section>
 <h1> CoFounders </h1>
 
- 
+</section> 
 <section>
 
 	<% @projects.each do |project| %>
+	<div>
 
-		<img src =<%= project.project_image %>>
+		<img class="project_home_image" src =<%= project.project_image %>>
+	</div>
+	<div>
 		<ul>
    			<li><%= project.project_name %></li>
    			<li><%= project.project_position %></li>
    		</ul>
+   	</div>
 
 	<% end %>
 
@@ -18,8 +23,13 @@
 <section>
 
 		<% @users.each do |user| %>
+	<div>
 
-		<img src =<%= user.user_image %>>
+		<img class="user_home_image" src =<%= user.user_image %>>
+
+	</div>
+	<div>
+		
 		<ul>
 			<li><%= user.user_name %> <%= user.user_last_name %></li>
    			<li><%= user.user_education %></li>
@@ -27,6 +37,25 @@
    			<li><%= user.user_skills %></li>
    		</ul>
 
+   	</div>
+
 	<% end %>
 
 </section>
+<section>
+
+<!-- SECTION FOR EVENTS-->
+
+</section>
+
+<section>
+
+	<!-- SECTION FOR LINKS -->
+
+</section>
+
+<footer>
+
+
+
+</footer>
