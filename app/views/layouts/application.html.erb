@@ -5,23 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 </head>
 <body>
 	 <div class="nav pull-right">
-        <% if @current_user %> 
+        <% if current_user %> 
   		<ul> 
-    		<li><%= @current_user.user_email %></li> 
-    		<li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+    		<li><%= current_user.user_email %></li> 
+    		<li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li> 
   			</ul> 
 		<% else %> 
   			<ul> 
-    			<li><%= link_to "Login", 'login' %></a></li> 
-    			<li><%= link_to "Signup", 'signup' %></a></li> 
+    			<li><a><%= link_to "Login", 'login' %></a></li> 
+    			<li><a><%= link_to "Signup", 'signup' %></a></li> 
   			</ul> 
   		<% end %>  
     </div>
 
 <%= yield %>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

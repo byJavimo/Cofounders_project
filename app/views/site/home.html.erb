@@ -5,12 +5,12 @@
 <section>
 
 	<% @projects.each do |project| %>
-	<div>
+
+	<div class="projects_home_display">
 
 		<img class="project_home_image" src =<%= project.project_image %>>
-	</div>
-	<div>
-		<ul>
+
+		<ul class="projects_list_home">
    			<li><%= project.project_name %></li>
    			<li><%= project.project_position %></li>
    		</ul>
@@ -22,15 +22,13 @@
 
 <section>
 
-		<% @users.each do |user| %>
-	<div>
+	<% @users.each do |user| %>
 
-		<img class="user_home_image" src =<%= user.user_image %>>
+	<div class="users_home_display">
 
-	</div>
-	<div>
-		
-		<ul>
+		<img class="user_home_image round" src =<%= user.user_image %>>
+
+		<ul class="users_list_home">
 			<li><%= user.user_name %> <%= user.user_last_name %></li>
    			<li><%= user.user_education %></li>
    			<li><%= user.user_position %></li>

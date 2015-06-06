@@ -5,14 +5,51 @@
 
 .user_home_image{
 	width: 300px;
-	height: 300px;
+	height: 200px;
 	margin-top: 25px;
 	margin-left: 50px;
+
 }
 
 .project_home_image{
 	width: 300px;
-	height: 300px;
+	height: 200px;
 	margin-top: 25px;
 	margin-left: 50px;
+
 }
+
+.projects_list_home{
+	list-style: none;
+	font-size: 16px;
+
+}
+
+.users_list_home{
+	list-style: none;
+	font-size: 16px;
+}
+
+.projects_home_display{
+	float: left;
+	margin-left: 50px;
+	margin-top: 50px;
+
+}
+
+.users_home_display{
+	float: left;
+	margin-left: 50px;
+	margin-top: 50px;
+
+
+}
+
+.round {
+	margin-top:  100px;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 150px;
+	height: 150px;
+}
+
