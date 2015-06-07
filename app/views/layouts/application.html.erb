@@ -14,13 +14,13 @@
 	 <div class="nav pull-right">
         <% if current_user %> 
   		<ul> 
-    		<li><%= current_user.user_email %></li> 
-    		<li><a><%= link_to "Log out", logout_path, method: "delete" %></a></li> 
+    		<%= current_user.user_email %> 
+    		<a><%= link_to "Log out", logout_path, method: "delete" %></a> 
   			</ul> 
 		<% else %> 
   			<ul> 
-    			<li><a><%= link_to "Login", 'login' %></a></li> 
-    			<li><a><%= link_to "Signup", 'signup' %></a></li> 
+    			<a><%= link_to "Login", 'login' %></a>
+    			<a><%= link_to "Signup", 'signup' %></a>
   			</ul> 
   		<% end %>  
     </div>

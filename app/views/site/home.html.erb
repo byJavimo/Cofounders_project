@@ -1,14 +1,19 @@
 <section>
-<h1> CoFounders </h1>
+	
+	<h1 id="letters_main_image"> CoFounders </h1>
 
-</section> 
+	<img id="site_main_image" src="http://www.mmxstudio.net/wp-content/uploads/2012/02/coworking-1.jpeg">
+
+</section> 	
+	
+
 <section>
 
 	<% @projects.each do |project| %>
 
 	<div class="projects_home_display">
 
-		<img class="project_home_image" src =<%= project.project_image %>>
+		<a href=<%= link_to(project.project_name, project_path(project.id))%>><img class="project_home_image" src =<%= project.project_image %>></a>
 
 		<ul class="projects_list_home">
    			<li><%= project.project_name %></li>

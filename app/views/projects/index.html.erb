@@ -1,5 +1,29 @@
 <% @projects.each do |project| %>
 	
+	<img src=<%= project.project_image %>>
+	
 	<%= project.project_name %>
+
+	<%= project.project_position %>
+
+	<%= project.project_skills %>
+
+	<p>
+
+	<% if project.project_cofounder == true %>
+				
+				<%="#{project.project_name} is looking for opportunities in new projects" %>
+
+		<% end %>
+	</p>
+
+	<p>
+		<% if project.project_employee == true %>
+
+				<%= "#{project.project_name} has a current position #{project.project_position}" %>
+
+		<% end %>
+	</p>
+
 
 <% end %>
