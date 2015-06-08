@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Cofounders</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %> 
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
   <!-- Latest compiled and minified CSS -->
@@ -11,22 +11,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 </head>
 <body>
-	 <div class="nav pull-right">
-        <% if current_user %> 
-  		<ul> 
-    		<%= current_user.user_email %> 
-    		<a><%= link_to "Log out", logout_path, method: "delete" %></a> 
+	 <div style="position:absolute;z-index:1000" class="nav pull-left">
+      <% if current_user %> 
+  		  <ul> 
+    		  <%= current_user.user_email %> 
+    		  <%= link_to "Log out", logout_path, method: "delete" %>
   			</ul> 
 		<% else %> 
   			<ul> 
-    			<a><%= link_to "Login", 'login' %></a>
-    			<a><%= link_to "Signup", 'signup' %></a>
+          <%= link_to "Login", 'login' %>
+    			<%= link_to "Signup", signup_path %>
   			</ul> 
   		<% end %>  
     </div>
 
-<%= yield %>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <%= yield %>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

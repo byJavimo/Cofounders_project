@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :require_user, only: [:show]
+	before_action :require_user, only: [:show,:new,:edit]
 
 	def index
 		@projects = Project.all

@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
-	before_action :require_user, only: [:show]
+	before_action :require_user, only: [:show, :edit]
 	def index
 		@users = User.all
 	end
 	def show
-		@user = User.find params[:id] 
+		@user = User.find params[:id]
+		@projects = Project.all 
+			@projects_found = false
+			@projects.each do |project|
+			 	if @user.skills_or_position_matching? project
+							@projects_found = true 
+					end 
+				end
 	end
 	def new
 		@user = User.new
@@ -14,7 +21,7 @@ class UsersController < ApplicationController
 		if @user.save
 			flash[:notice] = "Welcome to Cofounders. You have been succesfully registred"
 			session[:user_id] = @user.id
-			redirect_to users_path
+			redirect_to user_path(@user.id)
 		else
 			flash[:alert] = "Sorry, an error happened!!Please, revise you have completed all the mandatory fields. If the problem continues, you can contact us at 918268896"
 			redirect_to '/signup'

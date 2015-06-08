@@ -9,19 +9,21 @@
 
 <section>
 
-	<% @projects.each do |project| %>
+		<% @projects.each do |project| %>
 
-	<div class="projects_home_display">
+			<div class="projects_home_display">
 
-		<a href=<%= link_to(project.project_name, project_path(project.id))%>><img class="project_home_image" src =<%= project.project_image %>></a>
+				<a href='<%=project_path(project.id) %>'><img class="project_home_image" src='<%=project.project_image %>'></a>
 
-		<ul class="projects_list_home">
-   			<li><%= project.project_name %></li>
-   			<li><%= project.project_position %></li>
-   		</ul>
-   	</div>
+				<ul class="projects_list_home">
+		   			<li><%= project.project_name %></li>
+		   			<li><%= project.project_position %></li>
+		   		</ul>
+		   	</div>
 
-	<% end %>
+		<% end %>
+
+
 
 </section>
 
@@ -31,14 +33,14 @@
 
 	<div class="users_home_display">
 
-		<img class="user_home_image round" src =<%= user.user_image %>>
+		<img class="user_home_image round" src='<%= user.user_image %>'>
 
 		<ul class="users_list_home">
 			<li><%= user.user_name %> <%= user.user_last_name %></li>
-   			<li><%= user.user_education %></li>
    			<li><%= user.user_position %></li>
-   			<li><%= user.user_skills %></li>
    		</ul>
+
+   		<button>More about <%="#{user.user_name}" %></button>
 
    	</div>
 

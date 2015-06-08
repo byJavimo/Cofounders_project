@@ -1,23 +1,70 @@
-<div>
+<% if current_user.user_email == @user.user_email %>
 
-	<img src=<%= @user.user_image %>>
+	<h1> Welcome <%="#{@user.user_name}" %> </h1>
 
-<div>
+		<div>
+			<img src=<%= @user.user_image %>>
+		</div>
+		<div>
+			<ul>
+				<li><%= @user.user_name %></li>
+				<li><%= @user.user_last_name %></li>
+				<li><%= @user.user_email %></li>
+				<li><%= @user.user_education%></li>
+				<li><%= @user.user_position %></li>
+				<li><%= @user.user_skills %></li>
+			</ul>
+		</div>
+		<section>
+			<button> EDIT PROFILE </button>
+			<button> CREATE PROJECT </button>
+			<button> DELETE PROFILE </button>
+			<button> MY PROJECTS </button>
+		</section>
 
-<div>
+		<section>
+			<h3> Projects that can interest you... </h3>
 
-	<ul>
+			<div>
+
+				<% if @projects_found %>
+					<% @projects.each do |project| %>
+						<% if @user.skills_or_position_matching? project %>
+								<%=project.project_name %>
+						<% end %>
+					<% end %>
+
+				<% else%>
+					<p> Sorry, there is no project that match with your interest or skills. You can look more projects here</p>
+				<% end %>
+			</div>
+		</section>
+
+<% else %>
 
 
-	<li><%= @user.user_name %></li>
-	<li><%= @user.user_last_name %></li>
-	<li><%= @user.user_email %></li>
-	<li><%= @user.user_education%></li>
-	<li><%= @user.user_position %></li>
-	<li><%= @user.user_skills %></li>
+			<img src=<%= @user.user_image %>>
 
-	</ul>
-</div>
+		<div>
+
+			<ul>
+
+
+				<li><%= @user.user_name %></li>
+				<li><%= @user.user_last_name %></li>
+				<li><%= @user.user_email %></li>
+				<li><%= @user.user_education%></li>
+				<li><%= @user.user_position %></li>
+				<li><%= @user.user_skills %></li>
+
+			</ul>
+
+		</div>
+
+<% end %>
+
+
+
 
 
 
