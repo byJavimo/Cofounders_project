@@ -27,6 +27,17 @@ class UsersController < ApplicationController
 			redirect_to '/signup'
 		end
 	end
+	def edit
+		@user = User.find params[:id]
+	end
+	def update
+		@user = User.find params[:id]
+		if @user.update project_params
+			redirect_to user_path(@user.id)
+		else
+			redirect_to edit_user_path(@user.id)
+		end
+	end
 	private
 	def user_params
 		params.require(:user).permit(:user_image, :user_name, :user_last_name, :user_email, :password, :user_education, :user_position, :user_skills, :user_cofounder, :user_employee)

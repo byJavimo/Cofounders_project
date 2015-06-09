@@ -1,66 +1,79 @@
-<section>
-	
-	<h1 id="letters_main_image"> CoFounders </h1>
+<div class="container-fluid">
+	<section class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<nav id="main-menu">
+    		 <ul class="nav-bar">
+         		 <li class="nav-button-home"><a class="glyphicon glyphicon-home" href='<%=root_path %>'> Home</a></li> 
+         		 <li class="nav-button-services"><a class="fa fa-briefcase"href='<%=projects_path %>'> Projects </a></li>
+          		<li class="nav-button-products"><a  class="fa fa-users" href='<%=users_path %>'> Candidates</a></li>
+    		 </ul>
+			</nav>
+			<h1 id="letters_main_image"> CoFounders </h1>
+			<img id="site_main_image"src="http://www.mmxstudio.net/wp-content/uploads/2012/02/coworking-1.jpeg">
+		</div>
+	</section>
 
-	<img id="site_main_image" src="http://www.mmxstudio.net/wp-content/uploads/2012/02/coworking-1.jpeg">
+	<section class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12" >
+			<div id='carousel'>
+				<figure id="spinner">
+					<%@projects.each do |project| %>
+					<a href='<%=project_path(project.id) %>'><img src='<%=project.project_image %>'></a>
+					<%end%>
+				</figure>
+			</div>
+				<span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
+				<span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
 
-</section> 	
-	
+	</section>
+	<section class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<% @users.each do |user| %>
+				<div class="col-md-3 col-sm-3 col-xs-3 users_home_display">
+					<img class="user_home_image round" src='<%= user.user_image %>' alt="Click to know more about this person">
+					<ul class="users_list_home">
+						<li><%= user.user_name %> <%= user.user_last_name %></li>
+			   			<li><%= user.user_position %></li>
+			   		</ul>
+			   	</div>
+			<% end %>
+		</div>
+	</section>
+ 	
+	<section>
 
-<section>
+	<!-- SECTION FOR EVENTS-->
 
-		<% @projects.each do |project| %>
+	</section>
 
-			<div class="projects_home_display">
-
-				<a href='<%=project_path(project.id) %>'><img class="project_home_image" src='<%=project.project_image %>'></a>
-
-				<ul class="projects_list_home">
-		   			<li><%= project.project_name %></li>
-		   			<li><%= project.project_position %></li>
-		   		</ul>
-		   	</div>
-
-		<% end %>
-
-
-
-</section>
-
-<section>
-
-	<% @users.each do |user| %>
-
-	<div class="users_home_display">
-
-		<img class="user_home_image round" src='<%= user.user_image %>'>
-
-		<ul class="users_list_home">
-			<li><%= user.user_name %> <%= user.user_last_name %></li>
-   			<li><%= user.user_position %></li>
-   		</ul>
-
-   		<button>More about <%="#{user.user_name}" %></button>
-
-   	</div>
-
-	<% end %>
-
-</section>
-<section>
-
-<!-- SECTION FOR EVENTS-->
-
-</section>
-
-<section>
+	<section>
 
 	<!-- SECTION FOR LINKS -->
 
-</section>
+	</section>
 
-<footer>
-
-
-
-</footer>
+	<footer class="row">
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<h2> CoFounders </h2>
+				<p>
+				Confounders is a platform that help startups and entrepreneus to connect with the talent they need to launch their projects and businesses.
+				</p>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<h3> Corporate </h3>
+				<ul>
+					<li>About us</li>
+					<li>Contact</li>
+				</ul>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<h3>Site Map</h3>
+				<ul>
+					<li>Home</li>
+					<li>Projects</li>
+					<li>Candidates</li>
+				</ul>
+		</div>
+		<span>2015.CopyleftCofounders Project</span>
+	</footer>
+</div>

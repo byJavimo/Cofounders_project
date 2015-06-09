@@ -16,8 +16,8 @@
 			</ul>
 		</div>
 		<section>
-			<button> EDIT PROFILE </button>
-			<button> CREATE PROJECT </button>
+			<button><%= link_to('Edit profile', edit_user_path(@user.id))%></button>
+			<button><%= link_to('Create project', new_project_path )%></button>
 			<button> DELETE PROFILE </button>
 			<button> MY PROJECTS </button>
 		</section>

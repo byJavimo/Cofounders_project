@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .login_menu{
+	 position:absolute;
+	 z-index:1000; 
+	 right: 20px;
+ }
+
+
