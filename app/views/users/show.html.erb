@@ -1,29 +1,23 @@
 <% if current_user.user_email == @user.user_email %>
 
-	<h1> Welcome <%="#{@user.user_name}" %> </h1>
 
-		<div>
-			<img src=<%= @user.user_image %>>
-		</div>
-		<div>
-			<ul>
-				<li><%= @user.user_name %></li>
-				<li><%= @user.user_last_name %></li>
-				<li><%= @user.user_email %></li>
-				<li><%= @user.user_education%></li>
-				<li><%= @user.user_position %></li>
-				<li><%= @user.user_skills %></li>
-			</ul>
-		</div>
-		<section>
-			<button><%= link_to('Edit profile', edit_user_path(@user.id))%></button>
+<div class="container-fluid">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail circular" src="<%=@user.user_image%>" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1><%=@user.user_name%></h1>
+            <h2><%= @user.user_last_name %></h2>
+            <p><%= @user.user_position %></p>
+        	<p><%= @user.user_education%></p>
+        </div>
+        <div>
+        	<button><%= link_to('Edit profile', edit_user_path(@user.id))%></button>
 			<button><%= link_to('Create project', new_project_path )%></button>
 			<button> DELETE PROFILE </button>
 			<button> MY PROJECTS </button>
-		</section>
-
-		<section>
-			<h3> Projects that can interest you... </h3>
+        </div>
+        <h3> Projects that can interest you... </h3>
 
 			<div>
 
@@ -38,28 +32,25 @@
 					<p> Sorry, there is no project that match with your interest or skills. You can look more projects here</p>
 				<% end %>
 			</div>
-		</section>
-
+        <div>
+        </div>
+    </div>
+</div> <!-- /container -->  
+		
 <% else %>
 
-
-			<img src=<%= @user.user_image %>>
-
-		<div>
-
-			<ul>
-
-
-				<li><%= @user.user_name %></li>
-				<li><%= @user.user_last_name %></li>
-				<li><%= @user.user_email %></li>
-				<li><%= @user.user_education%></li>
-				<li><%= @user.user_position %></li>
-				<li><%= @user.user_skills %></li>
-
-			</ul>
-
-		</div>
+<div class="container-fluid">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail circular" src="<%=@user.user_image%>" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1><%=@user.user_name%></h1>
+            <h2><%= @user.user_last_name %></h2>
+            <p><%= @user.user_position %></p>
+        	<p><%= @user.user_education%></p>
+        </div>
+    </div>
+</div> <!-- /container -->  
 
 <% end %>
 

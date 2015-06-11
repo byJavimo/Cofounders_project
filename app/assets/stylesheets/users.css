@@ -2,6 +2,13 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+/* FORM FOR USER */
+
+#signup_intro{
+  text-align: center
+}
+
 .form {
   text-align:center;
   margin: 0 auto 10px;
@@ -26,16 +33,55 @@ input[type=password] {
   color: #FFFFFF;
   font-size: 18px;
   text-transform: uppercase;
-  background: #c91717;
+  background: #4f4f4f;
   padding: 10px 20px;
   border: 0;
   margin-top: 6px;
 }
+
+/* USERS INDEX VIEW*/
+
 
 .user_image_index{
   width: 400px;
   height: 400px;
   margin-top: 25px;
   border: 5px white;
+}
+
+/* USER PROFILE VIEW */
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%;
+
+}
+
+
+
+@media (max-width:768px)
+{
+    
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%; 
+}
 }
   

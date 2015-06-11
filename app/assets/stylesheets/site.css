@@ -3,71 +3,6 @@
   They will automatically be included in application.css.
 */
 
-/* STYLE FOR NAVBAR */
-
-#main-menu{
-	position: absolute;
-	z-index: 3;
-	margin-top: -40px;
-}
-
-
-#main-menu .nav-bar { list-style:none; margin-top: 40px; }
-#main-menu .nav-bar li { display:inline; padding:0 10px; }
-
-#main-menu .nav-bar li a {
-  text-decoration: none;
-  padding-left: 25px;
-  color: #333;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-/* STYLE FIRST SECTION */
-
-div#carousel { 
-  perspective: 1200px; 
-  background: #100000; 
-  padding-top: 10%; 
-  font-size:0; 
-  margin-bottom: 3rem; 
-  overflow: hidden; 
-}
-figure#spinner { 
-  transform-style: preserve-3d; 
-  height: 300px; 
-  transform-origin: 50% 50% -500px; 
-  transition: 1s; 
-} 
-figure#spinner img { 
-  width: 40%; max-width: 425px; 
-  position: absolute; left: 30%;
-  transform-origin: 50% 50% -500px;
-  outline:1px solid transparent; 
-}
-figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
-}
-figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
-figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
-figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
-figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
-figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
-figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
-figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
-div#carousel ~ span { 
-  color: #fff; 
-  margin: 5%; 
-  display: inline-block; 
-  text-decoration: none; 
-  font-size: 2rem; 
-  transition: 0.6s color; 
-  position: relative; 
-  margin-top: -6rem; 
-  border-bottom: none; 
-  line-height: 0; }
-div#carousel ~ span:hover { color: #888; cursor: pointer; }
-
-/*STYLE FOR SECOND SECTION */
-
 
 .container-fluid{
 	margin: 0px;
@@ -76,33 +11,86 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
 
 }
 
-#letters_main_image{
-	position: absolute;
-	margin-left: 300px;
-	margin-top: 120px;
-	z-index: 2;
-	font-size: 44px;
-	font-style: bold;
+.sections_separation{
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
-#site_main_image{
+
+
+/* STYLE FOR NAVBAR */
+
+#main-menu{
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+}
+
+/*STYLE FOR SLIDER IMAGES SECTION */
+
+.site_main_image{
 	width: 100%;
 	height: 400px;
+	margin-top: -20px;
 }
 
-.user_home_image{
-	width: 300px;
-	height: 200px;
-	margin-top: 0px;
-	margin-left: 50px;
+.main-text
+{
+    position: absolute;
+    top: 300px;
+    width: 96.66666666666666%;
+    color: #FFF;
 }
+.btn-min-block
+{
+    min-width: 170px;
+    line-height: 26px;
+}
+.btn-clear
+{
+    color: #FFF;
+    background-color: transparent;
+    border-color: #FFF;
+    margin-right: 15px;
+}
+.btn-clear:hover
+{
+    color: #000;
+    background-color: #FFF;
+}
+
+
+/* STYLE INTRO SECTION */
+
+.intro_section{
+	margin-top: 525px;
+	height: 150px;
+
+}
+
+.intro_section h1 {
+	font-size: 24px;
+	font-style: bold;
+	text-align: center;
+}
+
+.intro_section p {
+	text-align: center;
+}
+
+
+
+
+/* STYLE PROJECTS SECTION */
 
 .project_home_image{
 	width: 300px;
 	height: 200px;
 	margin-top: 25px;
-	margin-left: 70px;
+	border: solid white 5px;
 }
+
+
 
 .projects_list_home{
 	list-style: none;
@@ -110,39 +98,117 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
 
 }
 
-.users_list_home{
-	list-style: none;
-	font-size: 16px;
-	margin-left: 70px;	
-}
 
 .projects_home_display{
-	float: left;
-	margin-left: 50px;
-	margin-top: 50px;
-
+	margin-top: 25px;
+	background-color:#4f4f4f;
+	color: white;
+	padding-bottom: 25px;
+	text-align: center;
 }
 
-.users_home_display{
-	float: left;
-	margin-left: 70px;
-	margin-top: 0px;
-
-
+.projects_home_display img:hover{
+	background-color: white;
+	opacity: 0.6;
 }
+
+
+
+
+/*STYLE FOR USERS SECTION */
+
+
+.quote {
+    color: rgba(0,0,0,.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/*-------------------------------*/
+/*    Carousel Fade Transition   */
+/*-------------------------------*/
+
+#fade-quote-carousel.carousel {
+  padding-bottom: 60px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+  bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+  background-color: #4f4f4f;
+  border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+    border: none;
+}
+
+
 
 .round {
-	margin-top:  0px;
-	border-radius: 50%;
+	border-radius: 100%;
 	overflow: hidden;
 	width: 250px;
 	height: 250px;
+	margin: auto;
+	border:solid #4f4f4f 5px; 
 }
+
+/*STYLE FOR EVENTS SECTION queda por retocar que se vea más la imagen y el texto centrarlo */
+
+.events_section{
+	background-image: url("http://nycdwellers.com/info-files/New_York_City_at_Night.jpg"); 
+	width: 100%;
+	height: 400px;
+	opacity: 0.6;
+}
+
 
 /* FOOTER SECTION */
 
-footer{
-	background-color: black;
-	color: white;
+
+
+footer {
+
+  width: 100%;
+  height: 280px;
+  margin-left: 50px;
+
+  background-color:  #4f4f4f;
+  background: 
+
+    linear-gradient(
+      rgba(240, 212, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+
+    color:  #4f4f4f ;
+
 }
+
+
+/* Custom footer CSS
+-------------------------------------------------- */
+
+.container .text-muted {
+  margin: 20px 0;
+}
+.footertext {
+  color: #ffffff;
+}
+
 

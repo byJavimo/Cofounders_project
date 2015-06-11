@@ -38,6 +38,11 @@ class UsersController < ApplicationController
 			redirect_to edit_user_path(@user.id)
 		end
 	end
+	def destroy
+		project = User.find params[:id]
+		user.destroy 
+		redirect_to root_path
+	end
 	private
 	def user_params
 		params.require(:user).permit(:user_image, :user_name, :user_last_name, :user_email, :password, :user_education, :user_position, :user_skills, :user_cofounder, :user_employee)

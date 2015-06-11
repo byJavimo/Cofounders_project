@@ -1,29 +1,33 @@
-<% @projects.each do |project| %>
-	
-	<img src=<%= project.project_image %>>
-	
-	<%= project.project_name %>
+<div class="container-fluid">
+	<div class="row">
+		<% @projects.each do |project| %>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="<%=project.project_image%>">
+	      <div class="caption">
+	        <h3><%=project.project_name%></h3>
+	       		<div>
+					<p><%= project.project_name %></p>
+					<p><%= project.project_position %></p>
+					<p><%= project.project_skills %></p>
+					<p>
+					<% if project.project_cofounder == true %>
+							
+							<%="#{project.project_name} is looking for a cofounder" %>
+					<% end %>
+					</p>
+					<p>
+					<% if project.project_employee == true %>
 
-	<%= project.project_position %>
+							<%= "#{project.project_name} is looking for a worker" %>
 
-	<%= project.project_skills %>
-
-	<p>
-
-	<% if project.project_cofounder == true %>
-				
-				<%="#{project.project_name} is looking for opportunities in new projects" %>
-
-		<% end %>
-	</p>
-
-	<p>
-		<% if project.project_employee == true %>
-
-				<%= "#{project.project_name} has a current position #{project.project_position}" %>
-
-		<% end %>
-	</p>
-
-
-<% end %>
+					<% end %>
+					</p>
+				</div>
+	        <p><a href="<%=project_path(project.id)%>" class="btn btn-primary" role="button">More info</a> <a href="#" class="btn btn-default" role="button">Connect</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <%end%>
+	</div>
+</div>
