@@ -2,17 +2,19 @@
 	<%=form_for @user do |f| %>
 		<%= f.label "Upload a photo" %>
 		<%= f.text_field :user_image, :placeholder => "Link to your photo" %>
-		Who are you?
-		Name:<%= f.text_field :user_name, :placeholder => "Name" %>
-		Last name: <%= f.text_field :user_last_name, :placeholder => "Last Name" %>
+		<br>
 		Add an email account
 		<%= f.email_field :user_email, :placeholder => "Email" %>
+		<br>
 		What did you study?
 		<%= f.text_field :user_education, :placeholder =>"Highest level of education you have" %>
+		<br>
 		What is your current position or which is the work you want to do?
 		<%= f.text_field :user_position, :placeholder => "Programmer, Trader, Financier, Accountant..." %>
+		<br>
 		What are ypur main skills or aptitudes?
 		<%= f.text_field :user_skills, :placeholder => "PHP, Ruby, Excel, Proactive..." %>
+		<br>
 		What do you want to be?
 		<%= check_box_tag(:user_cofounder) %>
 		<%= label_tag(:user_cofounder, "A CoFounder") %>
@@ -22,6 +24,6 @@
 		Add a password
 		<%= f.password_field :password, :placeholder => "Password" %>
 		<br>
-		<%= f.submit 'Create Account', class: "btn-submit" %>
+		<%= f.submit 'Update Profile', class: "btn-submit" %>
 	<% end %>
 </div>

@@ -41,12 +41,46 @@ input[type=password] {
 
 /* USERS INDEX VIEW*/
 
+.user_index{
+  margin-top: 60px;
+  margin-left: 4px;
+}
+
 
 .user_image_index{
   width: 400px;
   height: 400px;
-  margin-top: 25px;
-  border: 5px white;
+}
+
+.user_index_box{
+  width: 400px;
+  height: 800px;
+
+}
+
+.thumbnail img{
+    width: 400px;
+    height: 400px;
+
+}
+
+.btn {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 4px solid #CCCCCC;
+    margin:0;
+    -webkit-box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
+       -moz-box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
+            box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
+}
+.btn-info {
+    background-color: #00ffae;
+    border-color: #348fd2;
+    text-shadow: 1px 1px 0 #238ed5;
+}
+.btn-info:hover, .btn-info:focus {
+    background-color: #45abcd;
+    border-color: #347abe;
 }
 
 /* USER PROFILE VIEW */

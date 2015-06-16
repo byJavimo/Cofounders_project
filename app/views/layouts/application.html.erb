@@ -2,16 +2,16 @@
 <html>
 <head>
   <title>Cofounders</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %> 
-  <%= javascript_include_tag 'application'%>
-  <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %> 
+  <%= javascript_include_tag 'application'%>
+  <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
 </head>
 <body>
 
@@ -26,18 +26,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<%root_path%>">CoFounders</a>
+      <a class="navbar-brand" href="<%=root_path%>">CoFounders</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="<%=root_path%>"> Home </a></li>
+        <li class="active"><a href="<%=user_path(@user.id)%>">My profile<span class="sr-only">(current)</span></a></li>
         <li><a href="<%=projects_path%>">Search projects</a></li>
         <li><a href="<%=users_path%>">Search candidates</a></li>
+        <li><a href="<%=events_path%>">Search events</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<%=user_path(current_user.id)%>"><%=current_user.user_email %></a></li>
+        <li><a href="<%=user_path(current_user.id)%>"><%=current_user.user_name %></a></li>
         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -62,6 +63,7 @@
         <li class="active"><a href="<%=root_path%>"> Home <span class="sr-only">(current)</span></a></li>
         <li><a href="<%=projects_path%>">Search projects</a></li>
         <li><a href="<%=users_path%>">Search candidates</a></li>
+        <li><a href="<%=events_path%>"> Serach events</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<%=signup_path%>">Sign Up</a></li>

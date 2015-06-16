@@ -1,17 +1,20 @@
 class UsersController < ApplicationController
-	before_action :require_user, only: [:show, :edit]
+	before_action :require_user, only: [:show,:edit]
 	def index
 		@users = User.all
 	end
 	def show
 		@user = User.find params[:id]
 		@projects = Project.all 
-			@projects_found = false
-			@projects.each do |project|
-			 	if @user.skills_or_position_matching? project
-							@projects_found = true 
-					end 
-				end
+		@projects_found = false
+		@projects.each do |project|
+	 	if (@user.skills_matching? project)||(@user.position_matching? project) 
+ 			@projects_found = true 
+ 			@user.projects << project
+		end
+	end
+		@user_skills_array =[]	
+		@user_skills_array << @user.user_skills.split(",")
 	end
 	def new
 		@user = User.new
@@ -32,7 +35,7 @@ class UsersController < ApplicationController
 	end
 	def update
 		@user = User.find params[:id]
-		if @user.update project_params
+		if @user.update user_params
 			redirect_to user_path(@user.id)
 		else
 			redirect_to edit_user_path(@user.id)
@@ -48,4 +51,3 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:user_image, :user_name, :user_last_name, :user_email, :password, :user_education, :user_position, :user_skills, :user_cofounder, :user_employee)
 	end
 end
-

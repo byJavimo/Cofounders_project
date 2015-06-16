@@ -1,20 +1,17 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row user_index">
 		<% @users.each do |user| %>
 	  <div class="col-sm-6 col-md-4">
-	    <div class="thumbnail">
-	      <img src="<%=user.user_image%>">
+	  	<div class="user_index_box thumbnail">
+	      <img class="user_image_index"src="<%=user.user_image%>">
 	      <div class="caption">
-	        <h3><%=user.user_name%></h3>
+	        <h3><%=user.user_name%> <%=user.user_last_name%></h3>
 	       		<div>
-					<p><%= user.user_name %></p>
-					<p><%= user.user_last_name %></p>
 					<p><%= user.user_education %></p>
 					<p><%= user.user_position %></p>
 					<p><%= user.user_skills %></p>
 					<p>
-					<% if user.user_cofounder == true %>
-							
+					<% if user.user_cofounder == true %>	
 							<%="#{user.user_name} is looking for opportunities in new projects" %>
 					<% end %>
 					</p>
@@ -26,7 +23,7 @@
 					<% end %>
 					</p>
 				</div>
-	        <p><a href="<%=user_path(user.id)%>" class="btn btn-primary" role="button">More info</a> <a href="#" class="btn btn-default" role="button">Connect</a></p>
+	        <p><a href="<%=user_path(user.id)%>" class="btn btn-info btn-lg btn-block" role="button">More info</a></p>
 	      </div>
 	    </div>
 	  </div>
