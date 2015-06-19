@@ -1,14 +1,15 @@
-<div class="form">
-	<%=form_for @user do |f| %>
-		<%= f.text_field :user_name, :placeholder => "Name" %>
-		<br>
-		<%= f.text_field :user_last_name, :placeholder => "Last Name" %>
-		<br>
-		<%= f.email_field :user_email, :placeholder => "Email" %>
-		<br>
-		Add a password
-		<%= f.password_field :password, :placeholder => "Password" %>
-		<br>
-		<%= f.submit 'Create Account', class: "btn-submit" %>
-	<% end %>
+<div class="container-fluid">
+	<div class="row form">
+		<%=form_for @user do |f| %>
+			<%= f.text_field :user_name, :placeholder => "What's your name?" %>
+			<br>
+			<%= f.text_field :user_last_name, :placeholder => "What's your last name?" %>
+			<br>
+			<%= f.email_field :user_email, :placeholder => "Write an email adress" %>
+			<br>
+			<%= f.password_field :password, :placeholder => "Create your password" %>
+			<br>
+			<%= f.submit 'Create Account', class: "btn-submit" %>
+		<% end %>
+	</div>
 </div>

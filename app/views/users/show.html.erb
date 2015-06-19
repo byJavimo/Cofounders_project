@@ -8,52 +8,59 @@
         <div class="fb-profile-text">
             <h1><%=@user.user_name%> <%= @user.user_last_name %></h1>
             <h2><%=@user.user_position%></h2>
-            <div>
-        	    <p>Education: <%= @user.user_education%></p>
-                    <%@user_skills_array.each do |skill|%>
+            <h3>Education: <%= @user.user_education%></h3>
+        </div>
+<div class="container-fluid">
 
-                <ul>
-
-                     <button><%=skill%></button>
-
-                </ul>
-
-                <%end%>
+    <div class="row">
+        <%if @projects_found %>
+            <%@user_projects.each do |project| %>
+        <div class="col-md-8 col-sm-10 col-xs-10">
+            <div class="thumbnail">
+              <img src="<%=project.project_image%>" >
+              <div class="caption">
+                <h3><%=project.project_name%></h3>
+                <h4><%=project.project_position%></h4>
+                <p></p>
+                <p><a href="<%=project_path(project.id)%>" class="btn btn-primary" role="button">More info</a>
+              </div>
             </div>
         </div>
-        <div>
-        	<button><%= link_to('Edit profile', edit_user_path(@user.id))%></button>
-			<button><%= link_to('Create project', new_project_path )%></button>
-			<button> DELETE PROFILE </button>
-			<button><%= link_to('My projects', user_projects_path(@user.id))%></button>
-        </div>
-        <h3> Projects that can interest you... </h3>
-
-			<div>
-				<% if @projects_found %>
-					<% @user.projects.each do |project| %>
-                        <%=project.project_name %>
-                        
-					<% end %>
-				<% else%>
-					<p> Sorry, there is no project that match with your interest or skills. You can look more projects here</p>
-				<% end %>
-			</div>
-        <div>
+        <%end%>
+        
+        <%else%>
+        <div class="col-md-8 col-sm-10 col-xs-10">
+            <p> Sorry, there is no project that match with your interest or skills. You can look more projects here</p>
+        <% end %>
         </div>
     </div>
+    <div class="col-md-4 col-sm-2 col-xs-2">
+        <div class="profile_menu_box ">
+                  <a href="<%=edit_user_path(current_user.id)%>" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/> Update profile</a>
+                  <br>
+                  <a href="<%= new_user_project_path(current_user.id)%>" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Create new project</a>
+                  <br>
+                  <a href="<%=user_projects_path(current_user.id)%>" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>My projects</a>
+                  <br>
+                  <a href="#" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Search candidates</a>
+                  <br>
+                  <a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/> Search startups and projects</a>
+         </div>
+        </div>
+    </div>
+</div>
 </div> <!-- /container -->  
 		
 <% else %>
 
 <div class="container-fluid">
     <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/"/>
         <img align="left" class="fb-image-profile thumbnail circular" src="<%=@user.user_image%>" alt="Profile image example"/>
         <div class="fb-profile-text">
-            <h1><%=@user.user_name%></h1>
-            <h2><%= @user.user_last_name %></h2>
-            <p><%= @user.user_position %></p>
+            <h1><%=@user.user_name%> <%= @user.user_last_name %></h1>
+            <h2><%= @user.user_position %></h2>
+            <p></p>
         	<p><%= @user.user_education%></p>
         </div>
     </div>

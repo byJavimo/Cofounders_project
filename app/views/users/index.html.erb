@@ -9,17 +9,13 @@
 	       		<div>
 					<p><%= user.user_education %></p>
 					<p><%= user.user_position %></p>
-					<p><%= user.user_skills %></p>
-					<p>
 					<% if user.user_cofounder == true %>	
 							<%="#{user.user_name} is looking for opportunities in new projects" %>
 					<% end %>
 					</p>
 					<p>
 					<% if user.user_employee == true %>
-
-							<%= "#{user.user_name} is looking for a job" %>
-
+							<%="#{user.user_name} is looking for a job" %>
 					<% end %>
 					</p>
 				</div>

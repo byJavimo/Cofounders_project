@@ -23,6 +23,16 @@ input[type=password] {
   text-indent: 10px;
 } 
 
+select {
+  color: #666666;
+  width: 100%;
+  border: 1px solid #E6E6E6;
+  border-radius: 0px; 
+  height: 60px;
+  margin: 6px auto;
+  text-indent: 10px;
+} 
+
 .btn-submit {
   color: #FFFFFF;
   font-size: 18px;

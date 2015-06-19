@@ -1,21 +1,20 @@
-<div class="form">
-
-	<%=form_for @project do |f| %>
-		Upload a photo
-		<%= f.text_field :project_image, :placeholder => "Enter the link to your photo" %>
-		What is your project?Add the name of your project
-		<%= f.text_field :project_name, :placeholder => "Name of your project" %>
-		What position do you need to cover?
-		Position: <%= f.text_field :project_position, :placeholder => "Programmer, Designer, Martketing Assitant..." %>
-		Skills/Technologies needed?
-		<%= f.text_field :project_skills, :placeholder => "PHP, Ruby, JavaScript, SEO..."%>
-		What do you need for your project/startup?
-		<%= check_box_tag(:project_cofounder) %>
-		<%= label_tag(:project_cofounder, "A CoFounder") %>
-		<%= check_box_tag(:project_employee) %>
-		<%= label_tag(:project_employee, "An employee") %>
-		<br>
-		<%= f.submit 'Publish your project', class: "btn-submit" %>
-	<% end %>
-
-<div>
+<div class="container-fluid">
+	<div class="form">
+		<%=form_for [@user, @project] do |f| %>
+			<%= f.text_field :project_image, :placeholder => "Introduce a photo link"%>
+			<br>
+			<%= f.text_field :project_name, :placeholder => "Name of your project" %>
+			<br>
+			<%= f.select :project_position, options_for_select(["Business Intelligence", "Business Development", "Marketing & Communications", "Front-End Developer", "Back-End-Developer", "Full-Stack Developer", "Sales", "Custumer Service", "Mobile Apps Developer", "Syst. Admin", "Data Scientist"], params[:project_position]),{} %>
+			<br>
+			<%= text_field_tag :skill, nil, :placeholder => "PHP, Ruby, English, HTML5, SEO..." %>	
+			<br>
+			<p>What do you need for your project/startup?</p>
+			<%= check_box_tag(:project_cofounder) %>
+			<%= label_tag(:project_cofounder, "A CoFounder") %>
+			<%= check_box_tag(:project_employee) %>
+			<%= label_tag(:project_employee, "An employee") %>
+			<%= f.submit 'Publish your project', class: "btn-submit" %>
+		<% end %>
+	<div>
+</div>

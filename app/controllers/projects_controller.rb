@@ -11,14 +11,16 @@ class ProjectsController < ApplicationController
 		@project = Project.find params[:id] 
 	end
 	def new
-		@project = Project.new		
+		@user = User.find params[:user_id]
+		@project = @user.projects_created.new		
 	end
 	def create
-		@project = Project.new project_params	
+		@user = User.find params[:user_id]
+		@project = @user.projects_created.new(project_params)
+		@project.skills << Skill.new( name: params[:skill] )	
 		if @project.save
 			flash[:notice] = "Your project has been succesfully launched" 
-			redirect_to root_path
-
+			redirect_to user_path(@user.id)
 		else
 			flash[:alert] = "Sorry, an error happened while uploading your project. Please, revise you have completed all the mandatory fields. If the proble continues, you can contact us at 918268896"
 			redirect_to new_project_path
@@ -44,7 +46,7 @@ class ProjectsController < ApplicationController
 	end
 	private
 	def project_params
-		params.require(:project).permit(:project_name, :project_image, :project_position, :project_skills, :project_cofounder, :project_employee)
+		params.require(:project).permit(:project_name, :project_image, :project_position, :project_cofounder, :project_employee, :user_id)
 	end
 
 end

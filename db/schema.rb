@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616094414) do
+ActiveRecord::Schema.define(version: 20150619075905) do
+
+  create_table "courses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -24,13 +29,17 @@ ActiveRecord::Schema.define(version: 20150616094414) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "project_image"
     t.string   "project_name"
     t.string   "project_position"
-    t.string   "project_skills"
-    t.boolean  "project_cofounder"
     t.integer  "user_id"
+    t.boolean  "project_cofounder"
     t.boolean  "project_employee"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -41,6 +50,14 @@ ActiveRecord::Schema.define(version: 20150616094414) do
     t.integer "project_id"
   end
 
+  create_table "skills", force: :cascade do |t|
+    t.text     "name"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "user_image"
     t.string   "user_name"
@@ -49,7 +66,6 @@ ActiveRecord::Schema.define(version: 20150616094414) do
     t.string   "password_digest"
     t.string   "user_education"
     t.string   "user_position"
-    t.string   "user_skills"
     t.boolean  "user_cofounder"
     t.boolean  "user_employee"
     t.datetime "created_at",      null: false

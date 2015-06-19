@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
     	t.string :user_education
     	t.string :user_position
-    	t.string :user_skills
     	t.boolean :user_cofounder 
       t.boolean :user_employee
 

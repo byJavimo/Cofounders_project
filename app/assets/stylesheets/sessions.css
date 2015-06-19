@@ -10,6 +10,11 @@
   width: 300px;
 }
 
+.login_box{
+
+  margin-top: 60px;
+}
+
 input[type=text],
 input[type=email],
 input[type=password] {
