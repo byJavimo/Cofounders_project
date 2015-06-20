@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619075905) do
+ActiveRecord::Schema.define(version: 20150619100530) do
 
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 20150619075905) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string   "project_image"
-    t.string   "project_name"
-    t.string   "project_position"
+    t.string   "image"
+    t.string   "name"
+    t.string   "position"
     t.integer  "user_id"
-    t.boolean  "project_cofounder"
-    t.boolean  "project_employee"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.boolean  "cofounder"
+    t.boolean  "employee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects_users", force: :cascade do |t|
@@ -59,17 +59,17 @@ ActiveRecord::Schema.define(version: 20150619075905) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "user_image"
-    t.string   "user_name"
-    t.string   "user_last_name"
-    t.string   "user_email"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "email"
     t.string   "password_digest"
-    t.string   "user_education"
-    t.string   "user_position"
-    t.boolean  "user_cofounder"
-    t.boolean  "user_employee"
+    t.string   "education"
+    t.string   "position"
+    t.boolean  "cofounder"
+    t.boolean  "employee"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "image"
   end
 
 end

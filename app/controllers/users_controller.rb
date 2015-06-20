@@ -13,7 +13,6 @@ class UsersController < ApplicationController
  			@projects_found = true 
  			@user_projects << project
 		end
-
 	end
 	end
 	def new
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new user_params
 		if @user.save
-			flash[:notice] = "Welcome to Cofounders. You have been succesfully registred"
+			flash[:notice] ="Welcome to Cofounders. You have been succesfully registred"
 			session[:user_id] = @user.id
 			redirect_to user_path(@user.id)
 		else
@@ -50,6 +49,6 @@ class UsersController < ApplicationController
 	end
 	private
 	def user_params
-		params.require(:user).permit(:user_image, :user_name, :user_last_name, :user_email, :password, :user_education, :user_position, :user_cofounder, :user_employee)
+		params.require(:user).permit(:image, :name, :last_name, :email, :password, :education, :position, :cofounder, :employee)
 	end
 end

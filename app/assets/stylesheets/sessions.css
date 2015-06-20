@@ -9,7 +9,12 @@
   font-size: 16px;
   width: 300px;
 }
+.alert-message{
+  margin-top: 50px;
+  font-size: 14px;
+  color: red;
 
+}
 .login_box{
 
   margin-top: 60px;

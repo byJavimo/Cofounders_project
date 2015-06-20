@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post 'project/:project_id/skills' => 'skills#create_project_skill'
 
   get '/signup' => 'users#new', as: 'signup'
-  get 'login' => 'sessions#new'
+  get 'login' => 'sessions#new', as: 'login'
   post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy', as: 'logout'
 
   resources :users
   resources :projects

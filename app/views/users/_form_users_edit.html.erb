@@ -1,23 +1,23 @@
 <div class="container-fluid">
 	<div class="row form">
-		<%=form_for @user do |f| %>
-			<%= f.label "Upload a photo" %>
-			<%= f.text_field :user_image, :placeholder => "Link to your photo" %>
-			<br>
-			Add an email account
-			<%= f.email_field :user_email, :placeholder => "Email" %>
+		<%=form_for @user, :html => {:multipart => true} do |f| %>
+			<p>
+			<%= f.file_field :image %>
+			</p>
 			<br>
 			What did you study?
-			<%= f.select :user_education, options_for_select(["High School", "Degree", "Master Degree", "Ph.D"], params[:user_education]),{} %>
+			<%= f.select :education, options_for_select(["High School", "Degree", "Master Degree", "Ph.D"], params[:education]),{} %>
 			<br>
 			What is your current position or which is the work you want to do?
-			<%= f.select :user_position, options_for_select(["Business Intelligence", "Business Development", "Marketing & Communications", "Front-End Developer", "Back-End-Developer", "Full-Stack Developer", "Sales", "Custumer Service", "Mobile Apps Developer", "Syst. Admin", "Data Scientist"], params[:user_position]),{} %>
+			<%= f.select :position, options_for_select(["Business Intelligence", "Business Development", "Marketing & Communications", "Front-End Developer", "Back-End-Developer", "Full-Stack Developer", "Sales", "Custumer Service", "Mobile Apps Developer", "Syst. Admin", "Data Scientist"], params[:position]),{} %>
 			<br>
 			What do you want to be?
-			<%= check_box_tag(:user_cofounder) %>
-			<%= label_tag(:user_cofounder, "A CoFounder") %>
-			<%= check_box_tag(:user_employee) %>
-			<%= label_tag(:user_employee, "An Employee") %>
+			<%= check_box_tag(:cofounder) %>
+			<%= label_tag(:cofounder, "A CoFounder") %>
+			<%= check_box_tag(:employee) %>
+			<%= label_tag(:employee, "An Employee") %>
+			<br>
+			<%= f.email_field :email, :placeholder => "Change your email" %>
 			<br>
 			<%= f.password_field :password, :placeholder => "Change your password" %>
 			<br>

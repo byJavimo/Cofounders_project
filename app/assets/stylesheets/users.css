@@ -19,7 +19,8 @@
 
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=file] {
   color: #666666;
   width: 100%;
   border: 1px solid #E6E6E6;
@@ -75,15 +76,6 @@ select {
 
 }
 
-.btn {
-    border-radius: 0;
-    border: 0;
-    border-bottom: 4px solid #CCCCCC;
-    margin:0;
-    -webkit-box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
-       -moz-box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
-            box-shadow: 0 5px 5px -6px rgba(0,0,0,.3);
-}
 .btn-info {
     background-color: #00ffae;
     border-color: #348fd2;
@@ -133,4 +125,4 @@ select {
 .btn {
       margin-bottom:10px; 
       width:300px}
- 
+ }

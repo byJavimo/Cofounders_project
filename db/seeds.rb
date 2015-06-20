@@ -1,17 +1,17 @@
-user1=User.create user_image:"http://housetohome.media.ipcdigital.co.uk/96/00000feee/7d7d_orh550w550/YOUNG-DESIGNER-ALEX-BRADLEY.jpg", user_name:"Peter", user_last_name:"Andersen",  user_email:"peter.anderse@mail.com", password:"12345", user_education: "Degree in Architecture", user_position: "Graphic Designer", user_cofounder: true, user_employee: true
-user2=User.create user_image:"http://www.collegequest.com/wp-content/uploads/what-do-graphic-designers-do.jpg", user_name:"Pedro", user_last_name:"Ramírez",  user_email:"pedro.ramirez@mail.com", password: "12345", user_education: "Degree in Informatic", user_position: "Programmer", user_cofounder: true, user_employee: true
-user3=User.create user_image:"http://cdn.allartschools.com/wp-content/uploads/sites/3/2014/09/outlook-graphic-design-jobs.jpg", user_name:"María", user_last_name:"Albar",  user_email:"maria.albar@mail.com", password: "12345", user_education: "Degree in Architecture", user_position: "Marketing", user_cofounder: true, user_employee: false
-user4=User.create user_image:"http://consultorescomercioexterior.es/wp-content/uploads/2014/10/freelance-.jpg", user_name:"Jorge", user_last_name:"Perez",  user_email:"jorge.perez@mail.com", password: "12345", user_education: "Degree in Art", user_position: "Graphic Designer", user_cofounder: false, user_employee: true
-user5=User.create user_image:"http://pas-wordpress-media.s3.amazonaws.com/wp-content/uploads/2014/01/Freelance-Writer-1024x743.jpg", user_name:"Louis", user_last_name:"Lusan",  user_email:"Louis.lusan@mail.com", password: "12345", user_education: "Degree in Architecture", user_position: "Graphic Designer", user_cofounder: true, user_employee: true
-user6=User.create user_image:"http://freelanceshow.com/wp-content/uploads/2010/01/freelance-ft.jpg", user_name:"Joanna", user_last_name:"Blizz",  user_email:"joanna.blizz@mail.com", password: "12345", user_education: "Degree in Marketing", user_position: "Business Developer", user_cofounder: false, user_employee: true
+user1=User.create name:"Peter", last_name:"Andersen",  email:"peter.anderse@mail.com", password:"12345", education: "Degree in Architecture", position: "Graphic Designer", cofounder: true, employee: true
+user2=User.create name:"Pedro", last_name:"Ramírez",  email:"pedro.ramirez@mail.com", password: "12345", education: "Degree in Informatic", position: "Programmer", cofounder: true, employee: true
+user3=User.create name:"María", last_name:"Albar",  email:"maria.albar@mail.com", password: "12345", education: "Degree in Architecture", position: "Marketing", cofounder: true, employee: false
+user4=User.create name:"Jorge", last_name:"Perez",  email:"jorge.perez@mail.com", password: "12345", education: "Degree in Art", position: "Graphic Designer", cofounder: false, employee: true
+user5=User.create name:"Louis", last_name:"Lusan",  email:"Louis.lusan@mail.com", password: "12345", education: "Degree in Architecture", position: "Graphic Designer", cofounder: true, employee: true
+user6=User.create name:"Joanna", last_name:"Blizz",  email:"joanna.blizz@mail.com", password: "12345", education: "Degree in Marketing", position: "Business Developer", cofounder: false, employee: true
 
 
-project1= Project.create project_image:"http://www.redusers.com/noticias/wp-content/uploads/2013/01/dropbox1.png", project_name:"Dropbox", project_position:"Frontend Developer",project_cofounder: false,  project_employee: true
-project2= Project.create project_image:"http://a3.mzstatic.com/eu/r30/Purple1/v4/25/8c/2f/258c2f5b-e9c2-fd25-c940-a9bd936a9df2/icon320x320.jpeg", project_name:"Facebook", project_position:"Programmer", project_cofounder: true, project_employee: false
-project3= Project.create project_image:"http://www.car-brand-names.com/wp-content/uploads/2015/05/Tesla-Motors-logo-2.jpg",project_name:"Tesla",  project_position:"Marketing", project_cofounder: false, project_employee: true
-project4= Project.create project_image:"https://pbs.twimg.com/profile_images/571076061169868800/2dDdk-Uh.png", project_name:"Twitter", project_position:"Frontend Developer", project_cofounder: false, project_employee: true
-project5= Project.create project_image:"http://coach2coach.es/wp-content/uploads/2015/02/wordpress-logo-680x400.png", project_name:"Wordpress", project_position:"Programmer", project_cofounder: true, project_employee: false
-project6= Project.create project_image:"http://www.siliconnews.es/wp-content/uploads/2015/04/sohpify-logo.jpg", project_name:"Shopify", project_position:"Accountant", project_cofounder: false, project_employee: true
+project1= Project.create image:"http://www.redusers.com/noticias/wp-content/uploads/2013/01/dropbox1.png", name:"Dropbox", position:"Frontend Developer",cofounder: false,  employee: true
+project2= Project.create image:"http://a3.mzstatic.com/eu/r30/Purple1/v4/25/8c/2f/258c2f5b-e9c2-fd25-c940-a9bd936a9df2/icon320x320.jpeg", name:"Facebook", position:"Programmer", cofounder: true, employee: false
+project3= Project.create image:"http://www.car-brand-names.com/wp-content/uploads/2015/05/Tesla-Motors-logo-2.jpg",name:"Tesla",  position:"Marketing", cofounder: false, employee: true
+project4= Project.create image:"https://pbs.twimg.com/profile_images/571076061169868800/2dDdk-Uh.png", name:"Twitter", position:"Frontend Developer", cofounder: false, employee: true
+project5= Project.create image:"http://coach2coach.es/wp-content/uploads/2015/02/wordpress-logo-680x400.png", name:"Wordpress", position:"Programmer", cofounder: true, employee: false
+project6= Project.create image:"http://www.siliconnews.es/wp-content/uploads/2015/04/sohpify-logo.jpg", name:"Shopify", position:"Accountant", cofounder: false, employee: true
 
 
 

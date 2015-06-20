@@ -3,9 +3,10 @@ class User < ActiveRecord::Base
 	has_many :projects_created, :class_name => 'Project'
 	has_many :skills
 	has_secure_password
-	validates :user_email, uniqueness: true 
-	validates :user_name, presence: true 
-	validates :user_name, length: {maximum: 30}
+	mount_uploader :image, ImageUploader
+	validates :email, uniqueness: true 
+	validates :name, presence: true 
+	validates :name, length: {maximum: 30}
 
 	def self.last_created_users(param)
 		User.order(created_at: :desc).limit(param)
@@ -26,7 +27,7 @@ class User < ActiveRecord::Base
 	result
 	end
 	def position_matching? project
-		if project.project_position.downcase == self.user_position.downcase
+		if project.position.downcase == self.position.downcase
 			return true
 		else
 			return false

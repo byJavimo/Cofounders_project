@@ -3,22 +3,22 @@
 			<% @projects.each do |project| %>
 		  <div class="col-sm-6 col-md-4">
 		    <div class="project_index_box thumbnail">
-		      <img src="<%=project.project_image%>">
+		      <img src="<%=project.image%>">
 		      <div class="caption">
-		        <h3><%=project.project_name%></h3>
+		        <h3><%=project.name%></h3>
 		       		<div>
-						<p><%= project.project_name %></p>
-						<p><%= project.project_position %></p>
+						<p><%= project.name %></p>
+						<p><%= project.position %></p>
 						<p>
-						<% if project.project_cofounder == true %>
+						<% if project.cofounder == true %>
 								
-								<%="#{project.project_name} is looking for a cofounder" %>
+								<%="#{project.name} is looking for a cofounder" %>
 						<% end %>
 						</p>
 						<p>
-						<% if project.project_employee == true %>
+						<% if project.employee == true %>
 
-								<%= "#{project.project_name} is looking for a worker" %>
+								<%= "#{project.name} is looking for a worker" %>
 
 						<% end %>
 						</p>

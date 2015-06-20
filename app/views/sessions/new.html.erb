@@ -1,14 +1,30 @@
-<div class="container">
+<div class="container-fluid">
+<%if flash[:alert]%>    
+  <div class="alert-message"> Sorry, you cannot access to your personal profile. Please, revise your password or email.</div>    
   <div class="row login">
 		<div class="form login_box">
       <br>
       <br>
       <h1>Log in</h1>
       <%= form_for(:session, url: login_path) do |f| %> 
-      <%= f.email_field :user_email, :placeholder => "Email" %> 
+      <%= f.email_field :email, :placeholder => "Email" %> 
       <%= f.password_field :password, :placeholder => "Password" %> 
-      <%= f.submit "Log in", class: "btn-submit" %>
+      <%= f.submit "Good luck!", class: "btn-submit" %>
       <% end %>
     </div>
 	</div>
+  <% else %>
+  <div class="row login">
+    <div class="form login_box">
+      <br>
+      <br>
+      <h1>Log in</h1>
+      <%= form_for(:session, url: login_path) do |f| %> 
+      <%= f.email_field :email, :placeholder => "Email" %> 
+      <%= f.password_field :password, :placeholder => "Password" %> 
+      <%= f.submit "Good luck!", class: "btn-submit" %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
 </div>

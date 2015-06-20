@@ -1,11 +1,11 @@
 <div class="container-fluid">
 	<div class="row form">
 		<%=form_for @user do |f| %>
-			<%= f.text_field :user_name, :placeholder => "What's your name?" %>
+			<%= f.text_field :name, :placeholder => "What's your name?" %>
 			<br>
-			<%= f.text_field :user_last_name, :placeholder => "What's your last name?" %>
+			<%= f.text_field :last_name, :placeholder => "What's your last name?" %>
 			<br>
-			<%= f.email_field :user_email, :placeholder => "Write an email adress" %>
+			<%= f.email_field :email, :placeholder => "Write an email adress" %>
 			<br>
 			<%= f.password_field :password, :placeholder => "Create your password" %>
 			<br>
