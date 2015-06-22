@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 			self.skills.split(",").each do |user_skill|
 				project_skill.each do |p_skill|
 				user_skill.each do |u_skill|
-				if p_skill.name.downcase == u_skill.name.downcase
+				if p_skill.name.downcase == u_skill.name.to_s.downcase
 						result << project
 					end
 				end
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 	result
 	end
 	def position_matching? project
-		if project.position.downcase == self.position.downcase
+		if project.position.to_s.downcase == self.position.to_s.downcase
 			return true
 		else
 			return false

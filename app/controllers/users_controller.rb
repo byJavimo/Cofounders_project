@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
 	before_action :require_user, only: [:show,:edit]
+	def send_user_mail
+		@user = User.find params[:id]
+		@project = Project.find params[:user_id]
+
+		UserMailer.user_send(@user, @project).deliver
+  		flash[:notice] = "Order has been sent"
+  		redirect_to user_path(@user.id)
+	end
 	def index
 		@users = User.all
 	end
@@ -18,17 +26,17 @@ class UsersController < ApplicationController
 	def new
 		@user = User.new
 	end
-	def create
-		@user = User.new user_params
-		if @user.save
-			flash[:notice] ="Welcome to Cofounders. You have been succesfully registred"
-			session[:user_id] = @user.id
-			redirect_to user_path(@user.id)
-		else
-			flash[:alert] = "Sorry, an error happened!!Please, revise you have completed all the mandatory fields. If the problem continues, you can contact us at 918268896"
-			redirect_to '/signup'
-		end
-	end
+  	def create
+	@user = User.new user_params
+	    respond_to do |format|
+	      if @user.save
+	        UserMailer.welcome_email(@user).deliver_later
+	        format.html { redirect_to(@user, notice: 'User was successfully created.') }
+	      else
+	        format.html { reditect_to signup_path}
+	      end
+	  end
+  	end
 	def edit
 		@user = User.find params[:id]
 	end

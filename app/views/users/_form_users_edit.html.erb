@@ -2,26 +2,46 @@
 	<div class="row form">
 		<%=form_for @user, :html => {:multipart => true} do |f| %>
 			<p>
+			<%=f.label :image, "Add a profile image" %>
 			<%= f.file_field :image %>
+			<p>	
+			<%=f.label :remote_image_url, "Or image URL" %>
+			<%= f.text_field :remote_image_url %>
+			</p>
+			</p>
+			<p>
+			<%= f.label :email, "Click here if you want to change your email account" %>
+			<%= f.email_field :email, :placeholder => "Change your email" %>
 			</p>
 			<br>
-			What did you study?
-			<%= f.select :education, options_for_select(["High School", "Degree", "Master Degree", "Ph.D"], params[:education]),{} %>
+			<p>
+			<%= f.label :password, "Click here if you want to change your password" %>
+			<%= f.password_field :password, :placeholder => "Change your password" %></p>
 			<br>
-			What is your current position or which is the work you want to do?
+			<p>
+			<%= f.label :education, "What did you study?"%>
+			<%= f.select :education, options_for_select(["Basic Education","High School","High Levels","Degree", "Master Degree", "Ph.D"], params[:education]),{} %>
+			</p>
+			<br>
+			<p>
+			<%= f.label :position ,"What is your current position or which is the work you want to do?" %>
 			<%= f.select :position, options_for_select(["Business Intelligence", "Business Development", "Marketing & Communications", "Front-End Developer", "Back-End-Developer", "Full-Stack Developer", "Sales", "Custumer Service", "Mobile Apps Developer", "Syst. Admin", "Data Scientist"], params[:position]),{} %>
+			</p>
 			<br>
-			What do you want to be?
+			<p>
+			<%= f.label :cofounder, "What do you want to be?" %>
 			<%= check_box_tag(:cofounder) %>
 			<%= label_tag(:cofounder, "A CoFounder") %>
 			<%= check_box_tag(:employee) %>
 			<%= label_tag(:employee, "An Employee") %>
+			</p>
 			<br>
-			<%= f.email_field :email, :placeholder => "Change your email" %>
+			<hr>
+			<p>
+			<div><b> Add your skills here</b></div>
+			<%= text_field_tag :skill, nil, :placeholder => "PHP, Ruby, English, HTML5, SEO..." %>
+			</p>
 			<br>
-			<%= f.password_field :password, :placeholder => "Change your password" %>
-			<br>
-			<%= text_field_tag :skill, nil, :placeholder => "PHP, Ruby, English, HTML5, SEO..." %>	
 			<%= f.submit 'Update Profile', class: "btn-submit" %>
 		<% end %>
 		<div>

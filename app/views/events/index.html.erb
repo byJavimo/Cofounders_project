@@ -1,5 +1,26 @@
-<% @events.each do |event| %>
-
-	<h1><%= event.name %></h1>
-
-<%end%>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<% @events.each do |event| %>
+	  <div class="col-md-4 col-sm-12 col-xs-12">
+	  	<div class="thumbnail">
+	      <img src="<%=event.image%>">
+	      <div class="caption">
+	        <h3><%=event.name%></h3>
+	       		<div>
+	       			<p><%=event.date%></p>
+				</div>
+				<div>
+					<p><%=event.price%> €</p>
+				</div>
+				<div>
+					<a href="<%=event_path(event.id)%>" class="btn btn-primary btn-lg btn-block" role="button">More info</a>
+				</div>
+	      	</div>
+	    </div>
+	  </div>
+	  <%end%>
+	</div>
+</div>

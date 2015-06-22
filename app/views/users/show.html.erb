@@ -1,52 +1,90 @@
 <% if current_user.email == @user.email %>
-<div class="container-fluid">
-    <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="#"/>
-        <img class="fb-image-profile thumbnail circular" src="<%=@user.image_url.to_s%>">
-        <div class="fb-profile-text">
-            <h1><%=@user.name%> <%= @user.last_name %></h1>
-            <h2><%=@user.position%></h2>
-            <h3>Education: <%= @user.education%></h3>
-        </div>
+<br>
+<br>
 <div class="container-fluid">
     <div class="row">
-        <%if @projects_found %>
-            
-      <div class="col-md-8 col-sm-10 col-xs-10">
-          <%@user_projects.each do |project| %>
+      <div class="fb-profile col-md-12 col-sm-12 col-xs-12">
+        <img class="fb-image-lg" src="http://cdn.cultofmac.com/wp-content/uploads/2012/04/Photosharingjp-popup.jpg">
+      <div class="row">
+        <div class="col-md-3 col-sm-12 col-xs-12">
+        <img align="center" class="fb-image-profile thumbnail circular" src="<%=@user.image_url.to_s%>">
+        </div>
+        <div class="fb-profile-text col-md-3 col-sm-12 col-xs-12">
+            <h1><%=@user.name%> <%= @user.last_name %></h1>
+              <h2><%=@user.position%></h2>
+        </div>
+      <div class="profile-menu-box">
+        <div class="col-md-2 col-sm-12 col-xs-12">
+          <div align="center">
+              <a href="<%=edit_user_path(current_user.id)%>" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/> Update profile</a>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-12 col-xs-12">
+          <div align="center">
+              <a href="<%= new_user_project_path(current_user.id)%>" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Create new project</a>
+          </div>
+        </div>
+      <div class="col-md-2 col-sm-12 col-xs-12">
+          <div align="center">
+              <a href="<%=user_projects_path(current_user.id)%>" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>My projects</a>
+           </div>
+      </div>
+    </div>
+    <div class="sections-box">
+        <div class= "row col-md-12 col-sm-12 col-xs-12">
+          <div class="panel panel-default"> 
+            <div class="panel-heading">
+                <h3 class="section-title panel-title"> Education </h3>
+            </div>
+            <div class=" panel-body">
+                <p><%= @user.education%></p>
+            </div>
+          </div>
+        </div>
+        <div class= "row col-md-12 col-sm-12 col-xs-12">
+          <div class="panel panel-default"> 
+            <div class="panel-heading">
+                <h3 class="section-title panel-title"> Skills </h3>
+            </div>
+            <div class=" panel-body">
+                <%@user.skills.each do|skill| %>
+                    <p class="btn btn-success btn-lg"><%=skill.name%></p>
+                <%end%>
+            </div>
+          </div>
+        </div>        
+      </div> 
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="sections-box">
+    <%if @projects_found %> 
+    <div class="row">       
+          <%@user_projects.each do |project| %>       
+      <div class="col-md-4 col-sm-12 col-xs-12">
           <div class="thumbnail">
-              <img src="<%=project.image%>">
-              <div class="caption">
+            <img class="image-view-box" src="<%=project.image%>">
+            <div class="caption">
                 <h3><%=project.name%></h3>
                 <h4><%=project.position%></h4>
                 <p><a href="<%=project_path(project.id)%>" class="btn btn-primary" role="button">More info</a></p>
-              </div>
+                <p><a href="<%=%>" class="btn btn-warning" role="button">Contact</a></p>
             </div>
-            <%end%>
-        </div>
-        <%else%>
-        <div class="col-md-8 col-sm-10 col-xs-10">
-            <h3> Sorry, there is no project that match with your interest or skills. You can look more projects here</h3>
-        </div>
-        <%end%>
-      <div class="col-md-4 col-sm-2 col-xs-2">
-        <div class="profile_menu_box ">
-            <a href="<%=edit_user_path(current_user.id)%>" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/> Update profile</a>
-            <br>
-            <a href="<%= new_user_project_path(current_user.id)%>" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Create new project</a>
-            <br>
-            <a href="<%=user_projects_path(current_user.id)%>" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>My projects</a>
-            <br>
-            <a href="<%=users_path%>" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Search candidates</a>
-            <br>
-            <a href="<%=projects_path%>" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/> Search startups and projects</a>
-         </div>
+          </div>
       </div>
-    </div>
-</div> <!-- /container -->  
-		
+      <%end%>
+   </div>
+   <%else%>
+   <div class="col-md-12 col-sm-12 col-xs-12">
+        <h3> Sorry, there is no projects that match with your interest or skills. You can look more projects here</h3>
+  </div>
+    <%end%>
+  </div>
+</div> <!-- /container -->  		
 <% else %>
-
+<br>
+<br>
 <div class="container-fluid">
     <div class="fb-profile">
         <img align="left" class="fb-image-lg" src="#"/>
@@ -68,7 +106,7 @@
                 </p>
 
               <div>
-                <a href="#" role="button">Send email</a>
+                <a href="#" class="btn btn-primary btn-lg" role="button">Send email</a>
               </div>
          </div>
     </div>

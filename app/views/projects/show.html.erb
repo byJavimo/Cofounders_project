@@ -1,4 +1,31 @@
 <br>
 <br>
-<br>
-<h3><%= @project.name %> </h3>
+<div class="container-fluid">
+	<div class="row">
+    	<div class="col-md-12 col-sm-12 col-xs-12">
+        	<img align="left" class="fb-image-lg" src="<%=@project.image%>"/>
+    	</div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h1><%=@project.name %></h1>
+              <h2><%= @project.position %></h2>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+           <% @project.skills.each do|skill| %>
+              <p class="btn btn-success btn-lg"><%=skill.name%></p>
+          <%end%>
+       	</div>
+       	<div class="col-md-12 col-sm-12 col-xs-12">
+              	  <p>
+                  <%if @project.cofounder %>
+                      <%="#{@project.name} is looking for a cofounder" %>
+                  <%elsif @project.employee %>
+                      <%="#{@project.name} is currently looking for talents"%>
+                  <% end %>
+                 </p>
+        </div>
+        <div>
+             <a href="#" class="btn btn-primary btn-lg" role="button">Send email</a>
+        </div>
+      </div>
+    </div>
+</div> <!-- /container -->

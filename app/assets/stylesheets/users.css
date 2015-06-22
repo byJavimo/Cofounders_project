@@ -88,41 +88,38 @@ select {
 
 /* USER PROFILE VIEW */
 
-.fb-profile img.fb-image-lg{
+.fb-image-lg{
     z-index: 0;
-    width: 100%;  
+    width: 100%;
+    height: 50vh;  
     margin-bottom: 10px;
 }
 
 .fb-image-profile
-{
-    margin: -90px 10px 0px 50px;
+{   
+    margin: -90px 10px 30px 50px;
     z-index: 9;
     width: 250px; 
     height: 250px;
     border-radius: 50%;
-
+}
+.profile-menu-box{
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+.sections-box{ 
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 
-
-@media (max-width:768px)
-{
-    
-.fb-profile-text>h1{
-    font-weight: 700;
-    font-size:16px;
-}
-
-.fb-image-profile
-{
-    margin: -45px 10px 0px 25px;
-    z-index: 9;
-    width: 20%; 
-}
+.section-title{
+    text-align: center;
+    font-style: italic;
 }
 
 .btn {
-      margin-bottom:10px; 
-      width:300px}
+
+      width:200px}
  }
+       
