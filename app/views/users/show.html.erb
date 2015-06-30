@@ -4,13 +4,14 @@
 <div class="container-fluid">
     <div class="row">
       <div class="fb-profile col-md-12 col-sm-12 col-xs-12">
-        <img class="fb-image-lg" src="http://cdn.cultofmac.com/wp-content/uploads/2012/04/Photosharingjp-popup.jpg">
-      <div class="row">
+        <img class="fb-image-lg" src="<%=@user.background_image_url.to_s%>">
+      </div>
+      <div class="row fb-profile-text">
         <div class="col-md-3 col-sm-12 col-xs-12">
         <img align="center" class="fb-image-profile thumbnail circular" src="<%=@user.image_url.to_s%>">
         </div>
-        <div class="fb-profile-text col-md-3 col-sm-12 col-xs-12">
-            <h1><%=@user.name%> <%= @user.last_name %></h1>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            <h1><%=@user.name%> <%=@user.last_name %></h1>
               <h2><%=@user.position%></h2>
         </div>
       <div class="profile-menu-box">
@@ -30,54 +31,54 @@
            </div>
       </div>
     </div>
+  </div>
+  <div class="row">
     <div class="sections-box">
-        <div class= "row col-md-12 col-sm-12 col-xs-12">
-          <div class="panel panel-default"> 
-            <div class="panel-heading">
-                <h3 class="section-title panel-title"> Education </h3>
-            </div>
-            <div class=" panel-body">
-                <p><%= @user.education%></p>
-            </div>
-          </div>
+      <div class= "row col-md-12 col-sm-12 col-xs-12">
+        <div class="education-section">
+            <h2 class="section-title"> Studies </h2>
+                <h3><%= @user.education%></h3>
         </div>
-        <div class= "row col-md-12 col-sm-12 col-xs-12">
-          <div class="panel panel-default"> 
-            <div class="panel-heading">
-                <h3 class="section-title panel-title"> Skills </h3>
-            </div>
-            <div class=" panel-body">
-                <%@user.skills.each do|skill| %>
-                    <p class="btn btn-success btn-lg"><%=skill.name%></p>
+      </div>
+      <div class= "row col-md-12 col-sm-12 col-xs-12">
+        <div class="skills-section">
+          <h2 class="section-title">Skills</h2>
+                <%@user.skills.each do |skill|%>
+                    <h3 class="btn-skill"><%=skill.name%></h3>
                 <%end%>
-            </div>
           </div>
-        </div>        
+        </div>            
       </div> 
     </div>
   </div>
 </div>
 <div class="container-fluid">
   <div class="sections-box">
+    <div class="section-title">
+      <h3>Projects that can match with you...</h3>
+    </div>
     <%if @projects_found %> 
-    <div class="row">       
+    <div class="row matching-projects-section">   
           <%@user_projects.each do |project| %>       
       <div class="col-md-4 col-sm-12 col-xs-12">
-          <div class="thumbnail">
-            <img class="image-view-box" src="<%=project.image%>">
+        <div class="matched-projects-box">
+          <div class="thumbnail matched">
+            <img src="<%=project.image%>">
             <div class="caption">
                 <h3><%=project.name%></h3>
                 <h4><%=project.position%></h4>
-                <p><a href="<%=project_path(project.id)%>" class="btn btn-primary" role="button">More info</a></p>
-                <p><a href="<%=%>" class="btn btn-warning" role="button">Contact</a></p>
+                <div>
+                  <%=link_to('More info',project_path(project.id), class: "btn-info col-md-12")%> 
+                </div>
             </div>
           </div>
+        </div>
       </div>
       <%end%>
    </div>
    <%else%>
    <div class="col-md-12 col-sm-12 col-xs-12">
-        <h3> Sorry, there is no projects that match with your interest or skills. You can look more projects here</h3>
+        <h3 class="alert alert-danger"> Sorry, there is no projects that match with your interest or skills. You can look more projects here</h3>
   </div>
     <%end%>
   </div>
@@ -86,32 +87,50 @@
 <br>
 <br>
 <div class="container-fluid">
-    <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="#"/>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 fb-profile">
+        <img align="left" class="fb-image-lg" src="<%=@user.background_image_url.to_s%>"/>
         <img align="left" class="fb-image-profile thumbnail circular" src="<%=@user.image%>"/>
-        <div class="fb-profile-text">
-            <h1><%=@user.name%> <%= @user.last_name %></h1>
-              <h2><%= @user.position %></h2>
-        	      <p>
-                  <%= @user.education%>
-                  <% @user.skills.each do|skill| %>
-                      <%=skill.name%>
-                  <%end%>
-
-                  <%if @user.cofounder %>
-                      <%="#{@user.name} is looking for opportunities as a cofounder" %>
-                  <%elsif @user.employee %>
-                      <%="Maybe, #{@user.name} is looking for opportunities as worker"%>
-                  <% end %>
-                </p>
-
-              <div>
-                <a href="#" class="btn btn-primary btn-lg" role="button">Send email</a>
-              </div>
-         </div>
+      <div class="fb-profile-text">
+          <h1><%=@user.name%> <%= @user.last_name %></h1>
+            <h2><%= @user.position %></h2>
+          <div class="btn sendEmail btn-primary btn-lg" role="button">Send email</div>
+  </div>
+      </div>
+    </div>  
+  </div> 
+  <div class="row">          
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <%if @user.cofounder %>
+          <div class="alert alert-info">
+              <%="#{@user.name} is looking for opportunities as a cofounder"%>
+          </div>
+        <%elsif @user.employee %>
+          <div class="alert alert-info">
+              <%="Maybe, #{@user.name} is looking for opportunities as employee"%>
+          </div>
+        <% end %>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="education-section">
+          <h2 class="section-title"> Studies </h2>
+              <h3><%= @user.education%></h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="skills-section">
+          <h2 class="section-title">Skills</h2>
+              <%@user.skills.each do |skill|%>
+                  <h3 class="btn-skill"><%=skill.name%></h3>
+              <%end%>
+        </div>
+      </div>
+  </div>
 </div> <!-- /container -->  
-
 <% end %>
 
 

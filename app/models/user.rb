@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	has_many :skills
 	has_secure_password
 	mount_uploader :image, ImageUploader
+	mount_uploader :background_image, ImageUploader
 	validates :email, uniqueness: true 
 	validates :name, presence: true 
 	validates :name, length: {maximum: 30}
@@ -11,20 +12,16 @@ class User < ActiveRecord::Base
 	def self.last_created_users(param)
 		User.order(created_at: :desc).limit(param)
 	end
-	def skills_matching project
+	def skills_matching project	
 		result = []
-		project.skills.split(",").each do |project_skill|
-			self.skills.split(",").each do |user_skill|
-				project_skill.each do |p_skill|
-				user_skill.each do |u_skill|
-				if p_skill.name.downcase == u_skill.name.to_s.downcase
-						result << project
-					end
+		project.skills.each do |project_skill|
+			self.skills.each do |user_skill|
+				if project_skill.name.to_s.downcase == user_skill.name.to_s.downcase
+					result << project
 				end
 			end
-		end						
-	end
-	result
+		end
+		result
 	end
 	def position_matching? project
 		if project.position.to_s.downcase == self.position.to_s.downcase

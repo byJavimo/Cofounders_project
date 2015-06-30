@@ -1,20 +1,32 @@
 <div class="container-fluid">
-	<div class="form">
-		<%=form_for [@user, @project] do |f| %>
-			<%= f.text_field :image, :placeholder => "Introduce a photo link"%>
-			<br>
-			<%= f.text_field :name, :placeholder => "Name of your project" %>
-			<br>
-			<%= f.select :position, options_for_select(["Business Intelligence", "Business Development", "Marketing & Communications", "Front-End Developer", "Back-End-Developer", "Full-Stack Developer", "Sales", "Custumer Service", "Mobile Apps Developer", "Syst. Admin", "Data Scientist"], params[:position]),{} %>
-			<br>
-			<%= text_field_tag :skill, nil, :placeholder => "PHP, Ruby, English, HTML5, SEO..." %>	
-			<br>
-			<p>What do you need for your project/startup?</p>
-			<%= check_box_tag(:cofounder) %>
-			<%= label_tag(:cofounder, "A CoFounder") %>
-			<%= check_box_tag(:employee) %>
-			<%= label_tag(:employee, "An employee") %>
-			<%= f.submit 'Publish your project', class: "btn-submit" %>
-		<% end %>
-	<div>
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="form">
+			<%=form_for [@user, @project], :html => {:multipart => true} do |f| %>
+				<p>
+				<%= f.label :image, "Add a photo to your project" %>
+				<%= f.file_field :image %>
+				</p>
+				<br>
+				<p>
+				<%= f.text_field :name, :placeholder => "Name of your project" %>
+				</p>
+				<br>
+				<p>
+				<%= f.select :position, options_for_select(["Business Intelligence", "Business Development", "Marketing & Communications", "Front-End Developer", "Back-End-Developer", "Full-Stack Developer", "Sales", "Custumer Service", "Mobile Apps Developer", "Syst. Admin", "Data Scientist"], params[:position]),{} %>
+				</p>
+				<br>	
+				<p>
+				<%= f.label :cofounder, "What do you need for your project/startup?" %><br>
+				<%= check_box_tag(:cofounder) %>
+				<%= label_tag(:cofounder, "A CoFounder") %>
+				<%= check_box_tag(:employee) %>
+				<%= label_tag(:employee, "An Employee") %>
+				</p>
+				<br>
+				<p>
+				<%= f.submit 'Go to add skills', class: "btn-submit" %>
+				</p>
+			<% end %>
+		</div>
+	</div>
 </div>

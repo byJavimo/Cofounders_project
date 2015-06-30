@@ -39,7 +39,7 @@ select {
   margin: 6px auto;
   text-indent: 10px;
 } 
-}
+
 
 .btn-submit {
   color: #FFFFFF;
@@ -47,7 +47,6 @@ select {
   text-transform: uppercase;
   background: #4f4f4f;
   padding: 10px 20px;
-  border: 0;
   margin-top: 6px;
 }
 
@@ -73,18 +72,29 @@ select {
 .thumbnail img{
     width: 400px;
     height: 400px;
-
 }
+
 
 .btn-info {
-    background-color: #00ffae;
-    border-color: #348fd2;
-    text-shadow: 1px 1px 0 #238ed5;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 18px;
+  background: #4f4f4f;
+  padding: 10px 20px;
+  margin-top: 6px;
+  text-align: center;
 }
-.btn-info:hover, .btn-info:focus {
-    background-color: #45abcd;
-    border-color: #347abe;
+
+.btn-info a{
+  color: #FFFFFF;
 }
+
+.btn-info:hover{
+  text-decoration: none;
+  background-color: rgba(64, 64, 64, 0.6);
+  opacity: 0.6;
+}
+
 
 /* USER PROFILE VIEW */
 
@@ -107,19 +117,57 @@ select {
   margin-bottom: 30px;
   margin-left: 30px;
 }
+.profile-menu-box .btn{
+  width:200px;
+
+}
 .sections-box{ 
-    margin-left: 30px;
-    margin-top: 30px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.education-section{
+  text-align: center;
 }
 
 
 .section-title{
-    text-align: center;
-    font-style: italic;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color:#FFF;
+  font-style: italic;
+  border-top: solid 1px #e3e3e3;
+  background-color: #4f4f4f
 }
 
-.btn {
 
-      width:200px}
- }
-       
+.btn-skill{
+  width:100%;
+  border-bottom: solid 1px #e3e3e3;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+  margin-top:0px;
+  margin-bottom: 0px;
+
+}
+
+.btn-skill:hover{
+  text-decoration: none;
+  background-color: #e3e3e3;
+  text-transform: uppercase;
+}
+/*MATCHING PROJECTS*/
+
+
+.matching-projects-section{
+  background-color: #4f4f4f;
+  padding-top:15px;
+}
+
+.matched{
+  height: 600px;
+}
+  

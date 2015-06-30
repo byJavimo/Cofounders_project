@@ -20,4 +20,11 @@
 	 right: 20px;
  }
 
+ .email{
+ 	position: fixed;
+ 	z-index: 2;
+
+
+ }
+
 

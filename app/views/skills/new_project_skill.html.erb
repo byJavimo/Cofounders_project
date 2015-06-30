@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="form">
+				<%=form_for [@project, @skill] do |f| %>
+					<p>
+					<%=f.label :name, "Add the required skills here" %>
+					<%=f.text_field :name %>
+					<br>
+					<%=f.submit 'Add skill', class: "btn-submit"%>
+				<% end %>
+				<button class=""><a href="<%=user_path(@user.id)%>">Back to my profile</a></button>
+			</div>
+		</div>
+	</div>
+</div>

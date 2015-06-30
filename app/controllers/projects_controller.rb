@@ -18,9 +18,8 @@ class ProjectsController < ApplicationController
 		@user = User.find params[:user_id]
 		@project = @user.projects_created.new(project_params)
 		@project.skills << Skill.new( name: params[:skill] )	
-		if @project.save
-			flash[:notice] = "Your project has been succesfully launched" 
-			redirect_to user_path(@user.id)
+		if @project.save 
+			redirect_to new_project_skill_path(@project.id)
 		else
 			flash[:alert] = "Sorry, an error happened while uploading your project. Please, revise you have completed all the mandatory fields. If the proble continues, you can contact us at 918268896"
 			redirect_to new_project_path

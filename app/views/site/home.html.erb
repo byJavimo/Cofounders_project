@@ -18,13 +18,13 @@
 			      </div>
 			    </div>
 			     <div class="item">
-			      <img  src="http://myventure.in/wp-content/uploads/2014/10/google-office-interior-2.jpeg" >
+			      <img  src="https://social.bolzter.com/media/campaigns/0000000786/20141223034345_axis-space-coworking-office1.JPG" >
 			    </div>
 			       <div class="item">
 			      <img  src=" http://guiadoestudante.abril.com.br/blogs/melhores-faculdades/files/2012/05/BMW-Designer-Sketching-lg1.jpg" >
 			    </div>
 			    <div class="item">
-			      <img  src="http://www.interiordecodir.com/image/google/google-office-decor.jpg" >
+			      <img  src="http://www.tendencias21.net/photo/art/grande/7064490-10813399.jpg?v=1412919868" >
 			    </div>
 			  	</div>
 			  <div class="main-text hidden-xs">
@@ -55,9 +55,10 @@
 </section>
 
 <section class="container-fluid intro_section sections_separation">
-	<div class="row col-md-12 col-sm-12 col-xs-12">
-	<h1> Tech + talent = Awesome projects </h1>
-		<h2> We match great ideas with awesome candidates to help startups and entrepreneurs to kickstart their projects </h2>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<h1> We match great ideas with awesome candidates to help startups and entrepreneurs to kickstart their projects </h2>
+		</div>
 	</div>
 </section>
 
@@ -66,7 +67,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12 projects_home_display">
 			<h2>Projects and startups looking for candidates...</h2>
 			<% @projects.each do |project| %>
-				<div class="col-md-4 col-sm-2 col-xs-1">
+				<div class="col-md-4 col-sm-12 col-xs-12">
 					<a href="<%=project_path(project.id)%>"><img class="project_home_image" src='<%= project.image %>' alt="Click to know more about this project"></a>
 					<p><%=project.name%></p>
 			   	</div>
@@ -79,7 +80,7 @@
 <section id="carousel">    				
 	<div class="container sections_separation">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
 				<div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
 				  <!-- Carousel indicators -->
@@ -93,19 +94,19 @@
 				    <div class="active item">
 				    	<img class="round" src="<%=@users.find(1).image%>">
 				    	<blockquote>
-				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+				    		<p>It is the best way to get the partner you need to kick-start your projects</p>
 				    	</blockquote>
 				    </div>
 				    <div class="item">
 				    	<img class="round" src="<%=@users.find(2).image%>">
 				    	<blockquote>
-				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+				    		<p>Thanks to CoFounders, your projects will never be abandoned. You will get all the resources you need to launch them.</p>
 				    	</blockquote>
 				    </div>
 				    <div class="item">
 				    	<img class="round" src="<%=@users.find(3).image%>">
 				    	<blockquote>
-				    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+				    		<p>I am an IT professional who didn´t have any business idea and, but since I decided to subscribe to CoFounders, I found a world full of opportunities to put in practise my knowledges, learn new things and to connect with really interesting projects and startups.</p>
 				    	</blockquote>
 				    </div>
 				  </div>
@@ -114,58 +115,43 @@
 		</div>
 	</div>
 </section>
-
-</div>
-<div class="container-fluid events_section">
-	<div class="row col-md-12 col-sm-12 col-xs-12 ">
-		<h3>Learn, create and connect with us</h3>
-			<p> Connect with our international community and be ready to get everything you need to success with our selection courses and events worldwide</p>
-	</div>
-
-</div>
-
-
-
-	<section>
-
-	<!-- SECTION FOR EVENTS-->
-
-	</section>
-
-
-
+<section class="container-fluid">
+	<div class="row" id="video-home">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<%= video_tag "StartupWeekend.mp4", :width => "100%", :controls => true, :autoplay => true, :loop => true %>
+		</div>
+	</div>	
+</section>
 <footer class="container-fluid">
-    <div class="row">
-    	<br>
-    	<br>
-	    <div class="col-md-4">
-            <center>
-              <img src="http://oi60.tinypic.com/w8lycl.jpg" class="img-circle" alt="the-brains">
-              <br>
-              <h4 class="footertext">Cofounders</h4>
-              <p class="footertext">Confounders is a platform that help startups and entrepreneus to connect with the talent they need to launch their projects and businesses.</p>.<br>
-            </center>
-        </div>
-        <div class="col-md-4">
-            <center>
-              <img src="http://oi60.tinypic.com/2z7enpc.jpg" class="img-circle" alt="...">
-              <br>
-              <h4 class="footertext">Corporate</h4>
-              <p class="footertext">.<br>
-            </center>
-        </div>         
-        <div class="col-md-4">
-            <center>
-              <img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle" alt="...">
-              <br>
-              <h4 class="footertext">Site Map</h4>
-              <p class="footertext">.<br>
-            </center>
-        </div>
-    </div>
-            <div class="row">
-            <p><center><a href="#">Contact</a> <p class="footertext">Copyright CoFounders Project 2015</p></center></p>
-        </div>
+	<div class="row last-section">
+    	<div class="col-md-4 col-sm-12 col-xs-12">
+    		<center>
+    		<br>
+      		<img src="http://oi60.tinypic.com/w8lycl.jpg" class="img-circle">
+      		<br>
+      		<h4 class="footertext">Cofounders</h4>
+      		<p class="footertext">Confounders is a platform that help startups and entrepreneus to connect with the talent they need to launch their projects and businesses.</p>.<br>
+      	</center>
+    	</div>
+    	<div class="col-md-4 col-sm-12 col-xs-12">
+    		<center>
+    		<br>
+      		<img src="http://oi60.tinypic.com/2z7enpc.jpg" class="img-circle">
+      		<br>
+      		<h4 class="footertext">Corporate</h4>
+      		<p class="footertext">Do you want to take part of this project?Thinking in investig in a high-growing startup?Please you can contact us at investors@cofounders.com. </p><br>
+      		</center>	
+    	</div>         
+    	<div class="col-md-4 col-sm-12 col-xs-12">
+    		<center>
+    		<br>
+      		<img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle">
+      		<br>
+      		<h4 class="footertext">Contact</h4>
+      		<p class="footertext">If you have any suggestion or hesitation, please contact us at hi@cofounders.com. We will be more than glad to talk with you</p><br>
+      		</center>	
+    	</div>
+	</div>
 </footer>
 
 

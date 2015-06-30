@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(document).ready(function(){
+
+
+	$(".sendEmail").on("click", function(){
+		$("body").append(
+
+			'<div class="email">'+
+				
+	            '<div class="form-group">'+
+                    '<span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>'+
+                    '<div class="col-md-8">'+
+                        '<textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>'+
+                    '</div>'+
+                '</div>'+
+                 '<div class="btn btn-success">Send</div>'+
+			'</div>'
+
+				);
+	});
+
+
+});
+

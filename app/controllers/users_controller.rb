@@ -42,10 +42,8 @@ class UsersController < ApplicationController
 	end
 	def update
 		@user = User.find params[:id]
-		@user.skills << Skill.new( name: params[:skill] )
 		if @user.update user_params
-
-			redirect_to user_path(@user.id)
+			redirect_to new_user_skill_path(@user.id)
 		else
 			redirect_to edit_user_path(@user.id)
 		end
@@ -57,6 +55,6 @@ class UsersController < ApplicationController
 	end
 	private
 	def user_params
-		params.require(:user).permit(:image, :name, :last_name, :email, :password, :education, :position, :cofounder, :employee)
+		params.require(:user).permit(:background_image, :image, :name, :last_name, :email, :password, :education, :position, :cofounder, :employee)
 	end
 end

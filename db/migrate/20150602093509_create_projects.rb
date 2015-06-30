@@ -1,7 +1,6 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-		  t.string :image
     	t.string :name
     	t.string :position
       t.integer :user_id

@@ -6,12 +6,12 @@ user5=User.create name:"Louis", last_name:"Lusan",  email:"Louis.lusan@mail.com"
 user6=User.create name:"Joanna", last_name:"Blizz",  email:"joanna.blizz@mail.com", password: "12345", education: "Degree in Marketing", position: "Business Developer", cofounder: false, employee: true
 
 
-project1= Project.create image:"http://www.redusers.com/noticias/wp-content/uploads/2013/01/dropbox1.png", name:"Dropbox", position:"Frontend Developer",cofounder: false,  employee: true
-project2= Project.create image:"http://a3.mzstatic.com/eu/r30/Purple1/v4/25/8c/2f/258c2f5b-e9c2-fd25-c940-a9bd936a9df2/icon320x320.jpeg", name:"Facebook", position:"Programmer", cofounder: true, employee: false
-project3= Project.create image:"http://www.car-brand-names.com/wp-content/uploads/2015/05/Tesla-Motors-logo-2.jpg",name:"Tesla",  position:"Marketing", cofounder: false, employee: true
-project4= Project.create image:"https://pbs.twimg.com/profile_images/571076061169868800/2dDdk-Uh.png", name:"Twitter", position:"Frontend Developer", cofounder: false, employee: true
-project5= Project.create image:"http://coach2coach.es/wp-content/uploads/2015/02/wordpress-logo-680x400.png", name:"Wordpress", position:"Programmer", cofounder: true, employee: false
-project6= Project.create image:"http://www.siliconnews.es/wp-content/uploads/2015/04/sohpify-logo.jpg", name:"Shopify", position:"Accountant", cofounder: false, employee: true
+project1= Project.create name:"Dropbox", position:"Frontend Developer",cofounder: false,  employee: true
+project2= Project.create name:"Facebook", position:"Programmer", cofounder: true, employee: false
+project3= Project.create name:"Tesla",  position:"Marketing", cofounder: false, employee: true
+project4= Project.create name:"Twitter", position:"Frontend Developer", cofounder: false, employee: true
+project5= Project.create name:"Wordpress", position:"Programmer", cofounder: true, employee: false
+project6= Project.create name:"Shopify", position:"Accountant", cofounder: false, employee: true
 
 
 
