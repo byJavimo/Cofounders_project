@@ -1,33 +1,36 @@
-	<div class="container-fluid">
-		<div class="row">
-			<% @user.projects_created.each do |project| %>
-		  <div class="col-sm-6 col-md-4">
-		    <div class="thumbnail">
-		      <img src="<%=project.image%>">
-		      <div class="caption">
-		        <h3><%=project.name%></h3>
-		       		<div>
-						<p><%= project.name %></p>
-						<p><%= project.position %></p>
-						<p><%= project.skills.name %></p>
-
-						<% if project.cofounder == true %>
-								
-								<%="#{project.name} is looking for a cofounder" %>
-						<% end %>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+	<div class="row">
+	<% @user.projects_created.each do |project| %>
+	  <div class="col-md-4 col-sm-12 col-xs-12">
+	    <div class="thumbnail project_index_box">
+	      <img src="<%=project.image%>">
+	      <div class="caption">
+	        <h2><%=project.name%></h2>
+	       		<div>
+					<h3><%= project.position %></h3>
+					<% if project.cofounder == true %>
+						<p class="alert alert-info"><%="In this project you are looking for a cofounder" %></p>
+					<% end %>
+					<% if project.employee == true %>
+						<p class="alert alert-info"><%= "In this project you are looking for an employee" %>
 						</p>
-						<p>
-						<% if project.employee == true %>
-
-								<%= "#{project.name} is looking for a worker" %>
-
-						<% end %>
-						</p>
-					</div>
-		        <p><a href="<%=project_path(project.id)%>" class="btn btn-primary" role="button">More info</a> <a href="#" class="btn btn-default" role="button">Connect</a></p>
-		      </div>
-		    </div>
-		  </div>
-		  <%end%>
-		</div>
+					<% end %>
+					</p>
+				</div>
+	      </div>
+   	 	  	<div>
+				<a href="<%=project_path(project.id)%>" class="btn-info col-md-12 col-sm-12 col-xs-12">More info</a> 
+		  	</div>
+		  	<br>
+		  	<br>
+		 	 <div> 
+		  		<%=link_to('Delete project',user_project_path(@user.id,project.id),method: :delete,data: {confirm:"Are you sure?"}, class: "btn-delete col-md-12 col-sm-12 col-xs-12")%>
+			</div>
+	    </div>
+	  </div>
+	  <%end%>
 	</div>
+</div>

@@ -5,7 +5,7 @@
 	<div class="row">
 		<% @events.each do |event| %>
 	  <div class="col-md-4 col-sm-12 col-xs-12">
-	  	<div class="thumbnail">
+	  	<div class="event_index_box thumbnail">
 	      <img src="<%=event.image%>">
 	      <div class="caption">
 	        <h3><%=event.name%></h3>
@@ -16,7 +16,7 @@
 					<p><%=event.price%> €</p>
 				</div>
 				<div>
-					<a href="<%=event_path(event.id)%>" class="btn btn-primary btn-lg btn-block" role="button">More info</a>
+					<a href="<%=event_path(event.id)%>" class="col-md-12 col-sm-12 col-xs-12 btn-info" role="button">More info</a>
 				</div>
 	      	</div>
 	    </div>

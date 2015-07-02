@@ -45,11 +45,6 @@ select {
 
 /*PROJECTS INDEX */
 
-.projects_index{
-  margin-top: 60px;
-  margin-left: 4px;
-}
-
 .project_index_box{
   width: 400px;
   height: 700px;
@@ -68,11 +63,100 @@ select {
 }
 
 .btn-info {
-    background-color: #39b3d7;
-    border-color: #348fd2;
-    text-shadow: 1px 1px 0 #238ed5;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 18px;
+  background: #4f4f4f;
+  padding: 10px 20px;
+  margin-top: 6px;
+  text-align: center;
 }
+
 .btn-info:hover, .btn-info:focus {
-    background-color: #45abcd;
-    border-color: #347abe;
+  text-decoration: none;
+  background-color: #dbdbdb;
+  opacity: 0.6;
 }
+
+.btn-info a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-delete{
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 18px;
+  background: #c20000;
+  padding: 10px 20px;
+  margin-top: 6px;
+  text-align: center;
+
+}
+
+.btn-delete:hover, .btn-delete:focus{
+  text-decoration: none;
+  background-color: #dbdbdb;
+  opacity: 0.6;
+}
+
+.btn-delete a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/*PROJECT VIEW*/
+
+.btn-skill{
+  width:100%;
+  border-bottom: solid 1px #e3e3e3;
+    padding-top: 0px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  margin-top:0px;
+  margin-bottom: 0px;
+
+}
+
+.btn-skill h4{
+  margin-top: 0px;
+}
+
+.btn-skill:hover{
+  text-decoration: none;
+  background-color: #e3e3e3;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-sendEmail{
+  width:200px;
+  border-bottom: solid 1px #e3e3e3;
+  padding-top: 15px;
+  color:#FFFFFF;
+  padding-bottom: 15px;
+  background: #ff8a66;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top:0px;
+  margin-bottom: 0px;
+
+}
+
+.btn-sendEmail a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-sendEmail:hover{
+  text-decoration: none;
+  background-color: rgba(64, 64, 64, 0.6);
+  opacity: 0.6;
+}
+
+.box-1-project{
+  margin-left: 15px;
+}
+

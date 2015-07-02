@@ -25,6 +25,18 @@ class SkillsController < ApplicationController
 			redirect_to new_project_skill_path(@project.id)
 		end
 	end
+	def destroy_user_skill
+		@user=User.find params[:user_id]
+		skill=@user.skills
+		skill.destroy
+		redirect_to @user
+	end
+	def destroy_project_skill
+		@project=Project.find params[:project_id]
+		skill=@project.skills
+		skill.destroy
+		redirect_to @project
+	end
 	private
 	def skill_params
 		params.require(:skill).permit(:name, :user_id, :project_id)

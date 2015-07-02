@@ -1,0 +1,26 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<% @courses.each do |course| %>
+	  <div class="col-md-4 col-sm-12 col-xs-12">
+	  	<div class="course_index_box thumbnail">
+	      <img src="<%=course.image%>">
+	      <div class="caption">
+	        <h3><%=course.name%></h3>
+	       		<div>
+	       			<p><%=course.date%></p>
+				</div>
+				<div>
+					<p><%=course.price%> €</p>
+				</div>
+				<div>
+					<a href="<%=course_path(course.id)%>" class="col-md-12 col-sm-12 col-xs-12 btn-info" role="button">More info</a>
+				</div>
+	      	</div>
+	    </div>
+	  </div>
+	  <%end%>
+	</div>
+</div>

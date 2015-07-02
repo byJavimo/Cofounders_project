@@ -23,8 +23,14 @@
  .email{
  	position: fixed;
  	z-index: 2;
-
-
  }
+
+ .image-menu{ 
+ 	margin-top: 2px;  
+    z-index: 9;
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%;
+}
 
 

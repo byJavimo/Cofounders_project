@@ -49,8 +49,9 @@ class UsersController < ApplicationController
 		end
 	end
 	def destroy
-		project = User.find params[:id]
-		user.destroy 
+		user = User.find params[:id]
+		user.destroy
+		session[:user_id] = nil 
 		redirect_to root_path
 	end
 	private

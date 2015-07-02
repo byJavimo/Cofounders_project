@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-config.assets.paths << "#{Rails.root}/app/assets/videos"
+#config.assets.paths << "#{Rails.root}/app/assets/videos"
 
 require 'rails/all'
 

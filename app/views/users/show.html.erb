@@ -8,7 +8,9 @@
       </div>
       <div class="row fb-profile-text">
         <div class="col-md-3 col-sm-12 col-xs-12">
-        <img align="center" class="fb-image-profile thumbnail circular" src="<%=@user.image_url.to_s%>">
+          <img align="center" class="fb-image-profile thumbnail circular" src="<%=@user.image_url.to_s%>">
+          <div align="center"> <%=link_to('Delete profile',user_path(current_user.id),method: :delete,data: {confirm:"Are you sure?"}, class: "btn btn-danger btn-lg")%>
+          </div>
         </div>
         <div class="col-md-3 col-sm-12 col-xs-12">
             <h1><%=@user.name%> <%=@user.last_name %></h1>
@@ -17,7 +19,7 @@
       <div class="profile-menu-box">
         <div class="col-md-2 col-sm-12 col-xs-12">
           <div align="center">
-              <a href="<%=edit_user_path(current_user.id)%>" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/> Update profile</a>
+              <a href="<%=edit_user_path(current_user.id)%>" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/> Update profile</a>
           </div>
         </div>
         <div class="col-md-2 col-sm-12 col-xs-12">
@@ -25,11 +27,11 @@
               <a href="<%= new_user_project_path(current_user.id)%>" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Create new project</a>
           </div>
         </div>
-      <div class="col-md-2 col-sm-12 col-xs-12">
+        <div class="col-md-2 col-sm-12 col-xs-12">
           <div align="center">
               <a href="<%=user_projects_path(current_user.id)%>" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>My projects</a>
            </div>
-      </div>
+        </div>
     </div>
   </div>
   <div class="row">
@@ -43,9 +45,12 @@
       <div class= "row col-md-12 col-sm-12 col-xs-12">
         <div class="skills-section">
           <h2 class="section-title">Skills</h2>
-                <%@user.skills.each do |skill|%>
-                    <h3 class="btn-skill"><%=skill.name%></h3>
-                <%end%>
+            <%@user.skills.each do |skill|%>
+            <div class="btn-skill">
+              <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=delete_user_skill_path(@user.id,skill.id)%>"><span class="glyphicon glyphicon-remove"></span></a>
+                <h4><%=skill.name%></h4>
+            </div>
+            <%end%>
           </div>
         </div>            
       </div> 
@@ -88,17 +93,16 @@
 <br>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 fb-profile">
+      <div class="col-md-12 col-sm-12 col-xs-12 fb-profile">
         <img align="left" class="fb-image-lg" src="<%=@user.background_image_url.to_s%>"/>
         <img align="left" class="fb-image-profile thumbnail circular" src="<%=@user.image%>"/>
       <div class="fb-profile-text">
           <h1><%=@user.name%> <%= @user.last_name %></h1>
             <h2><%= @user.position %></h2>
-          <div class="btn sendEmail btn-primary btn-lg" role="button">Send email</div>
-  </div>
+          <div class="btn btn-sendEmail sendEmail" role="button">Connect</div>
       </div>
-    </div>  
-  </div> 
+    </div>
+  </div>   
   <div class="row">          
     <div class="col-md-12 col-sm-12 col-xs-12">
         <%if @user.cofounder %>

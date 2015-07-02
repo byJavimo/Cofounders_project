@@ -87,6 +87,7 @@ select {
 
 .btn-info a{
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .btn-info:hover{
@@ -145,9 +146,9 @@ select {
 .btn-skill{
   width:100%;
   border-bottom: solid 1px #e3e3e3;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 14px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  font-size: 12px;
   text-align: center;
   margin-top:0px;
   margin-bottom: 0px;
@@ -158,6 +159,33 @@ select {
   text-decoration: none;
   background-color: #e3e3e3;
   text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-sendEmail{
+  width:200px;
+  border-bottom: solid 1px #e3e3e3;
+  padding-top: 15px;
+  color:#FFFFFF;
+  padding-bottom: 15px;
+  background: #ff8a66;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top:0px;
+  margin-bottom: 0px;
+
+}
+
+.btn-sendEmail a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-sendEmail:hover{
+  text-decoration: none;
+  background-color: rgba(64, 64, 64, 0.6);
+  opacity: 0.6;
 }
 /*MATCHING PROJECTS*/
 

@@ -39,9 +39,10 @@ class ProjectsController < ApplicationController
 		end
 	end
 	def destroy
+		@user = User.find params[:user_id]
 		project = Project.find params[:id]
 		project.destroy 
-		redirect_to root_path
+		redirect_to @user
 	end
 	private
 	def project_params

@@ -5,19 +5,16 @@
 	  	<div class="user_index_box thumbnail">
 	      <img class="user_image_index"src="<%=user.image%>">
 	      <div class="caption">
-	        <h3><%=user.name%> <%=user.last_name%></h3>
+	        <h2><%=user.name%> <%=user.last_name%></h2>
 	       		<div>
-					<p><%= user.education %></p>
-					<p><%= user.position %></p>
+					<h3><%= user.education %></h3>
+					<h4><%= user.position %></h4>
 					<% if user.cofounder == true %>	
-							<%="#{user.name} is looking for opportunities in new projects" %>
+						<p class="alert alert-info"><%="#{user.name} is looking for opportunities in new projects" %></p>
 					<% end %>
-					</p>
-					<p>
 					<% if user.employee == true %>
-							<%="#{user.name} is looking for a job" %>
+						<p class="alert alert-info"><%="#{user.name} is looking for a job" %></p>
 					<% end %>
-					</p>
 				</div>
 	      	</div>
 	     <div class="btn-info"><a href="<%=user_path(user.id)%>">More info</a></div>
